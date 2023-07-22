@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+.back {
+  display: grid;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  background: #5656565e;
+  border: 0;
+  border-radius: 0 0 10px 0;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.back svg {
+  fill: #ffffff;
+}
+
+.back:hover{
+  transform: scale(1.2);
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #222327;
+}
+
+.navigation {
+  position: relative;
+  width: 450px;
+  height: 80px;
+  background: #2f2f2f;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+ul {
+  position: relative;
+  display: flex;
+  width: 400px;
+}
+
+li {
+  position: relative;
+  list-style: none;
+  width: 80px;
+  height: 80px;
+}
+
+a {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+}
+
+.icon {
+  position: relative;
+  display: block;
+  line-height: 85px;
+  font-size: 1.5em;
+  transition: 0.5s;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5)
+}
+
+a:hover .icon {
+  color: rgba(255, 255, 255, 1)
+}
+
+.active .icon {
+  color: #29fd53;
+  transform: translateY(-8px);
+}
+
+.text {
+  position: absolute;
+  font-weight: 600;
+  font-size: 0.6em;
+  color: #222327;
+  text-transform: uppercase;
+  transform: translateY(0px);
+  letter-spacing: 0.05em;
+  opacity: 0;
+  z-index: 1;
+}
+
+.active .text {
+  opacity: 1;
+  transform: translateY(16px);
+}
+
+.indicator {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.indicator::before {
+  content: '';
+  position: absolute;
+  bottom: 14px;
+  width: 80%;
+  height: 16px;
+  background: #29fd53;
+  border-radius: 10px;
+}
+
+li:nth-child(2).active ~ .indicator {
+  transform: translateX(calc(80px * 1));
+}
+li:nth-child(3).active ~ .indicator {
+  transform: translateX(calc(80px * 2));
+}
+li:nth-child(4).active ~ .indicator {
+  transform: translateX(calc(80px * 3));
+}
+li:nth-child(5).active ~ .indicator {
+  transform: translateX(calc(80px * 4));
+}

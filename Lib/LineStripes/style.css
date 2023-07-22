@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+.back {
+  display: grid;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  background: #5656565e;
+  border: 0;
+  border-radius: 0 0 10px 0;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.back svg {
+  fill: #ffffff;
+}
+
+.back:hover{
+  transform: scale(1.2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: #111;
+  overflow: hidden;
+}
+
+.logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 60vw;
+  z-index: 1;
+}
+
+.lines {
+  position: absolute;
+  height: 100vh;
+  background: #c509ea;
+  mix-blend-mode: color-dodge;
+  width: 50px;
+  animation: animate 2s linear infinite;
+}
+
+@keyframes animate 
+{
+ 0%, 100%
+ {
+  opacity: 0;
+ }
+ 50%
+ {
+  opacity: 1;
+ }
+}
+
+.container {
+  filter: blur(3px);
+}
