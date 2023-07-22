@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Handlee&family=Poppins:wght@100;200;300;900&display=swap');
+
+.back {
+    display: grid;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    background: rgba(112, 112, 112, 0.596);
+    border: 0;
+    border-radius: 0 0 10px 0;
+    transition: 0.2s;
+    cursor: pointer;
+  }
+  
+  .back svg {
+    fill: #ffffff;
+  }
+  
+  .back:hover{
+    transform: scale(1.2);
+  }
+  
+::-webkit-scrollbar {
+    width: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #5a524d;
+}
+
+.keyboard {
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    gap: 30px;
+}
+
+.input {
+    margin-top: 20px;
+}
+
+textarea::selection {
+    background: #4d5038;
+    color: #a7ae7c;
+}
+
+textarea {
+    font-family: "Comfortaa", sans-serif;
+    white-space: normal;
+    background: #a7ae7c;
+    color: #383b27;
+    width: 1400px;
+    height: 380px;
+    padding: 15px;
+    resize: none;
+    outline: none;
+    font-size: 4ch;
+    border-radius: 10px;
+    border: solid 2px black;
+    box-shadow: inset 0 15px 10px 0 rgba(0, 0, 0, 0.35), 0 5px 5px rgba(0, 0, 0, 0.5), 0 15px 25px rgba(0, 0, 0, 0.35);
+}
+
+.row {
+    display: grid;
+    justify-content: center;
+    gap: 0px 10px;
+}
+
+.buttons {
+    display: grid;
+    justify-content: center;
+    width: 1318px;
+    height: 415px;
+    gap: 10px;
+    user-select: none;
+    padding: 10px 5px;
+    border-radius: 10px;
+    background: #b1b0b0;
+}
+
+.btn,
+.btnsp {
+    font-family: "Comfortaa", sans-serif;
+    display: grid;
+    grid-auto-flow: column;
+    grid-row: 5;
+    padding: 0;
+    margin: 0;
+    width: 75px;
+    height: 75px;
+    align-content: space-evenly;
+    justify-content: space-evenly;
+    font-size: 1.5em;
+    border-radius: 10px;
+    background: linear-gradient(180deg, #707070, #6e6e6e);
+    box-shadow: inset -8px 0 8px rgba(0, 0, 0, 0.15),
+        inset 0 -8px 8px rgba(0, 0, 0, 0.30),
+        0 0 0 2px rgba(0, 0, 0, 0.75),
+        10px 20px 25px rgba(0, 0, 0, 0.4);
+    border: none;
+    color: #ffffff;
+
+}
+
+.btn:active,
+.btnsp:active {
+    border: none;
+    background: rgb(255, 153, 0);
+    color: rgb(0, 0, 0);
+}
+
+.btn:active>span,
+.btnsp:active {
+    color: rgb(0, 0, 0);
+}
+
+.checked {
+    background: rgb(255, 153, 0);
+    color: rgb(0, 0, 0);
+}
+
+.visHidden {
+    visibility: hidden;
+}
+
+.visVisible {
+    visibility: visible;
+}
+
+.en,
+.alwaysen {
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+}
+
+.ru,
+.alwaysru,
+.num {
+    height: 60px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+}
+
+.left,
+.right {
+    font-size: 2.5em;
+}
+
+.backspace {
+    width: 200px;
+}
+
+.slash,
+.tab {
+    width: 137px;
+}
+
+.caps {
+    width: 164px;
+}
+
+.enter {
+    width: 195px;
+}
+
+.shift {
+    width: 222px;
+}
+
+.ctrl {
+    width: 120px;
+}
+
+.space {
+    width: 566px;
+}
+
+.alt {
+    width: 101px;
+}

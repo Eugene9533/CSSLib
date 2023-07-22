@@ -1,0 +1,223 @@
+.back {
+  display: grid;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  background: #5656565e;
+  border: 0;
+  border-radius: 0 0 10px 0;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.back svg {
+  fill: #ffffff;
+}
+
+.back:hover{
+  transform: scale(1.2);
+}
+
+body{
+  background: #222327;
+}
+
+.figure {
+  display: flex;
+  height: 90px;
+  justify-content: center;
+  margin: 5px;
+  position: absolute;
+  font-size: 2rem;
+}
+
+.figure svg{
+  width: 100px;
+  fill: #3a3a3a;
+}
+
+.figure.pawn{
+  top: 10%;
+  left: 0%;
+}
+.figure.knight{
+  top: calc(95px * 1 + 10%);
+}
+.figure.bishop{
+  top: calc(95px * 2 + 10%);
+}
+.figure.castle{
+  top: calc(95px * 3 + 10%);
+}
+.figure.queen{
+  top: calc(95px * 4 + 10%);
+}
+.figure.king{
+  top: calc(95px * 5 + 10%);
+}
+
+.main {
+  display: grid;
+  justify-content: center;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  align-items: center;
+  justify-items: center;
+}
+
+.col {
+  margin: 0 21px ;
+  display: grid;
+  grid-template-rows: repeat(8, 1fr);
+  align-items: center;
+  justify-items: center;
+}
+
+p {
+  color: #fff;
+}
+
+.row.p2 {
+  grid-row: 1;
+  grid-column: 2;
+  rotate: 180deg;
+  transform: scale(-1, 1);
+}
+
+.row.p1 {
+  grid-row: 3;
+  grid-column: 2;
+}
+
+.col.p1 {
+  grid-row: 2;
+  grid-column: 1;
+}
+
+.col.p2 {
+  grid-row: 2;
+  grid-column: 3;
+  transform: scale(-1, -1);
+}
+
+.container {
+  display: grid;
+  justify-content: center;
+  margin-top: 120px;
+}
+
+.board {
+  border: 1px solid rgb(141, 108, 81);
+  display: grid;
+  grid-row: 2;
+  grid-column: 2;
+  width: fit-content;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  grid-gap: 0;
+  overflow: hidden;
+}
+
+input {
+  display: none;
+}
+
+.chess {
+  border: 1px solid rgb(141, 108, 81);
+  margin: 0;
+  padding: 0;
+  width: 60px;
+  height: 60px;
+}
+
+input[class="fi"]:checked+label>svg {
+  fill: rgb(255, 255, 255);
+  stroke: black;
+  stroke-width: 10px;
+  stroke-linecap: butt;
+}
+
+input[id="pawn"]:checked~.container>.board>input[class="ch"]:checked+label {
+  background: rgb(0 105 195);
+  box-shadow: 0 -62px 0 -1px rgb(202 219 255); 
+  z-index: 1;
+}
+
+input[id="pawn"]:checked~.container>.board>input[class="ch f"]:checked+label {
+  background: rgb(0 105 195);
+  box-shadow: 0 -62px 0 -1px rgb(202 219 255), 0 -124px 0 -1px rgb(202 219 255); 
+  z-index: 1;
+}
+
+input[id="knight"]:checked~.container>.board>input[class="ch"]:checked+label,
+input[id="knight"]:checked~.container>.board>input[class="ch f"]:checked+label,
+input[id="knight"]:checked~.container>.board>input[class="ch a"]:checked+label {
+  background: rgb(0 105 195);
+  box-shadow: 62px 124px 0 -1px rgb(202 219 255), 124px 62px 0 -1px rgb(202 219 255), 
+              62px -124px 0 -1px rgb(202 219 255), 124px -62px 0 -1px rgb(202 219 255), 
+              -62px 124px 0 -1px rgb(202 219 255), -124px 62px 0 -1px rgb(202 219 255),
+              -62px -124px 0 -1px rgb(202 219 255), -124px -62px 0 -1px rgb(202 219 255);
+  z-index: 1;
+}
+
+input[id="bishop"]:checked~.container>.board>input[class="ch"]:checked+label,
+input[id="bishop"]:checked~.container>.board>input[class="ch f"]:checked+label,
+input[id="bishop"]:checked~.container>.board>input[class="ch a"]:checked+label {
+  background: rgb(0 105 195);
+  box-shadow: 62px 62px 0 -1px rgb(202 219 255), calc(62px * 2) calc(62px * 2) 0 -1px rgb(202 219 255), calc(62px * 3) calc(62px * 3) 0 -1px rgb(202 219 255), calc(62px * 4) calc(62px * 4) 0 -1px rgb(202 219 255), calc(62px * 5) calc(62px * 5) 0 -1px rgb(202 219 255), calc(62px * 6) calc(62px * 6) 0 -1px rgb(202 219 255), calc(62px * 7) calc(62px * 7) 0 -1px rgb(202 219 255),
+              -62px 62px 0 -1px rgb(202 219 255), calc(-62px * 2) calc(62px * 2) 0 -1px rgb(202 219 255), calc(-62px * 3) calc(62px * 3) 0 -1px rgb(202 219 255), calc(-62px * 4) calc(62px * 4) 0 -1px rgb(202 219 255), calc(-62px * 5) calc(62px * 5) 0 -1px rgb(202 219 255), calc(-62px * 6) calc(62px * 6) 0 -1px rgb(202 219 255), calc(-62px * 7) calc(62px * 7) 0 -1px rgb(202 219 255),
+              -62px -62px 0 -1px rgb(202 219 255), calc(-62px * 2) calc(-62px * 2) 0 -1px rgb(202 219 255), calc(-62px * 3) calc(-62px * 3) 0 -1px rgb(202 219 255), calc(-62px * 4) calc(-62px * 4) 0 -1px rgb(202 219 255), calc(-62px * 5) calc(-62px * 5) 0 -1px rgb(202 219 255), calc(-62px * 6) calc(-62px * 6) 0 -1px rgb(202 219 255), calc(-62px * 7) calc(-62px * 7) 0 -1px rgb(202 219 255),
+              62px -62px 0 -1px rgb(202 219 255), calc(62px * 2) calc(-62px * 2) 0 -1px rgb(202 219 255), calc(62px * 3) calc(-62px * 3) 0 -1px rgb(202 219 255), calc(62px * 4) calc(-62px * 4) 0 -1px rgb(202 219 255), calc(62px * 5) calc(-62px * 5) 0 -1px rgb(202 219 255), calc(62px * 6) calc(-62px * 6) 0 -1px rgb(202 219 255), calc(62px * 7) calc(-62px * 7) 0 -1px rgb(202 219 255);
+  z-index: 1;
+}
+
+input[id="castle"]:checked~.container>.board>input[class="ch"]:checked+label,
+input[id="castle"]:checked~.container>.board>input[class="ch f"]:checked+label,
+input[id="castle"]:checked~.container>.board>input[class="ch a"]:checked+label {
+  background: rgb(0 105 195);
+  box-shadow: 0 62px 0 -1px rgb(202 219 255), 0 calc(62px * 2) 0 -1px rgb(202 219 255), 0 calc(62px * 3) 0 -1px rgb(202 219 255), 0 calc(62px * 4) 0 -1px rgb(202 219 255), 0 calc(62px * 5) 0 -1px rgb(202 219 255), 0 calc(62px * 6) 0 -1px rgb(202 219 255), 0 calc(62px * 7) 0 -1px rgb(202 219 255),
+              -62px 0 0 -1px rgb(202 219 255), calc(-62px * 2) 0 0 -1px rgb(202 219 255), calc(-62px * 3) 0 0 -1px rgb(202 219 255), calc(-62px * 4) 0 0 -1px rgb(202 219 255), calc(-62px * 5) 0 0 -1px rgb(202 219 255), calc(-62px * 6) 0 0 -1px rgb(202 219 255), calc(-62px * 7) 0 0 -1px rgb(202 219 255),
+              0 -62px 0 -1px rgb(202 219 255), 0 calc(-62px * 2) 0 -1px rgb(202 219 255), 0 calc(-62px * 3) 0 -1px rgb(202 219 255), 0 calc(-62px * 4) 0 -1px rgb(202 219 255), 0 calc(-62px * 5) 0 -1px rgb(202 219 255), 0 calc(-62px * 6) 0 -1px rgb(202 219 255), 0 calc(-62px * 7) 0 -1px rgb(202 219 255),
+              62px 0 0 -1px rgb(202 219 255), calc(62px * 2) 0 0 -1px rgb(202 219 255), calc(62px * 3) 0 0 -1px rgb(202 219 255), calc(62px * 4) 0 0 -1px rgb(202 219 255), calc(62px * 5) 0 0 -1px rgb(202 219 255), calc(62px * 6) 0 0 -1px rgb(202 219 255), calc(62px * 7) 0 0 -1px rgb(202 219 255);
+  z-index: 1;
+}
+
+input[id="queen"]:checked~.container>.board>input[class="ch"]:checked+label,
+input[id="queen"]:checked~.container>.board>input[class="ch f"]:checked+label,
+input[id="queen"]:checked~.container>.board>input[class="ch a"]:checked+label {
+  background: rgb(0 105 195);
+  box-shadow: 62px 62px 0 -1px rgb(202 219 255), calc(62px * 2) calc(62px * 2) 0 -1px rgb(202 219 255), calc(62px * 3) calc(62px * 3) 0 -1px rgb(202 219 255), calc(62px * 4) calc(62px * 4) 0 -1px rgb(202 219 255), calc(62px * 5) calc(62px * 5) 0 -1px rgb(202 219 255), calc(62px * 6) calc(62px * 6) 0 -1px rgb(202 219 255), calc(62px * 7) calc(62px * 7) 0 -1px rgb(202 219 255),
+              -62px 62px 0 -1px rgb(202 219 255), calc(-62px * 2) calc(62px * 2) 0 -1px rgb(202 219 255), calc(-62px * 3) calc(62px * 3) 0 -1px rgb(202 219 255), calc(-62px * 4) calc(62px * 4) 0 -1px rgb(202 219 255), calc(-62px * 5) calc(62px * 5) 0 -1px rgb(202 219 255), calc(-62px * 6) calc(62px * 6) 0 -1px rgb(202 219 255), calc(-62px * 7) calc(62px * 7) 0 -1px rgb(202 219 255),
+              -62px -62px 0 -1px rgb(202 219 255), calc(-62px * 2) calc(-62px * 2) 0 -1px rgb(202 219 255), calc(-62px * 3) calc(-62px * 3) 0 -1px rgb(202 219 255), calc(-62px * 4) calc(-62px * 4) 0 -1px rgb(202 219 255), calc(-62px * 5) calc(-62px * 5) 0 -1px rgb(202 219 255), calc(-62px * 6) calc(-62px * 6) 0 -1px rgb(202 219 255), calc(-62px * 7) calc(-62px * 7) 0 -1px rgb(202 219 255),
+              62px -62px 0 -1px rgb(202 219 255), calc(62px * 2) calc(-62px * 2) 0 -1px rgb(202 219 255), calc(62px * 3) calc(-62px * 3) 0 -1px rgb(202 219 255), calc(62px * 4) calc(-62px * 4) 0 -1px rgb(202 219 255), calc(62px * 5) calc(-62px * 5) 0 -1px rgb(202 219 255), calc(62px * 6) calc(-62px * 6) 0 -1px rgb(202 219 255), calc(62px * 7) calc(-62px * 7) 0 -1px rgb(202 219 255),
+              0 62px 0 -1px rgb(202 219 255), 0 calc(62px * 2) 0 -1px rgb(202 219 255), 0 calc(62px * 3) 0 -1px rgb(202 219 255), 0 calc(62px * 4) 0 -1px rgb(202 219 255), 0 calc(62px * 5) 0 -1px rgb(202 219 255), 0 calc(62px * 6) 0 -1px rgb(202 219 255), 0 calc(62px * 7) 0 -1px rgb(202 219 255),
+              -62px 0 0 -1px rgb(202 219 255), calc(-62px * 2) 0 0 -1px rgb(202 219 255), calc(-62px * 3) 0 0 -1px rgb(202 219 255), calc(-62px * 4) 0 0 -1px rgb(202 219 255), calc(-62px * 5) 0 0 -1px rgb(202 219 255), calc(-62px * 6) 0 0 -1px rgb(202 219 255), calc(-62px * 7) 0 0 -1px rgb(202 219 255),
+              0 -62px 0 -1px rgb(202 219 255), 0 calc(-62px * 2) 0 -1px rgb(202 219 255), 0 calc(-62px * 3) 0 -1px rgb(202 219 255), 0 calc(-62px * 4) 0 -1px rgb(202 219 255), 0 calc(-62px * 5) 0 -1px rgb(202 219 255), 0 calc(-62px * 6) 0 -1px rgb(202 219 255), 0 calc(-62px * 7) 0 -1px rgb(202 219 255),
+              62px 0 0 -1px rgb(202 219 255), calc(62px * 2) 0 0 -1px rgb(202 219 255), calc(62px * 3) 0 0 -1px rgb(202 219 255), calc(62px * 4) 0 0 -1px rgb(202 219 255), calc(62px * 5) 0 0 -1px rgb(202 219 255), calc(62px * 6) 0 0 -1px rgb(202 219 255), calc(62px * 7) 0 0 -1px rgb(202 219 255);
+  z-index: 1;
+}
+
+input[id="king"]:checked~.container>.board>input[class="ch"]:checked+label,
+input[id="king"]:checked~.container>.board>input[class="ch f"]:checked+label,
+input[id="king"]:checked~.container>.board>input[class="ch a"]:checked+label {
+  background: rgb(0 105 195);
+  box-shadow: 62px 62px 0 -1px rgb(202 219 255), -62px 62px 0 -1px rgb(202 219 255), -62px -62px 0 -1px rgb(202 219 255), 62px -62px 0 -1px rgb(202 219 255),
+              0 62px 0 -1px rgb(202 219 255), -62px 0 0 -1px rgb(202 219 255), 0 -62px 0 -1px rgb(202 219 255), 62px 0 0 -1px rgb(202 219 255);
+  z-index: 1;
+}
+
+.chess.w {
+  background: white;
+}
+
+.chess.b {
+  background: black;
+}
