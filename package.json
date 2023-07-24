@@ -1,0 +1,14 @@
+{
+  "name": "csslib",
+  "version": "1.0.0",
+  "description": "https://css-lib-eta.vercel.app/",
+  "main": "app.js",
+  "scripts": {
+    "test": ""
+  },
+  "author": "Eugene",
+  "license": "ISC",
+  "dependencies": {
+    "dom-to-image": "^2.6.0"
+  }
+}

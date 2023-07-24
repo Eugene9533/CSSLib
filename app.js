@@ -37,5 +37,5 @@ window.onload = function () {
       top: +sessionStorage.getItem("scrollPosition"),
       behavior: "smooth",
     });
-  }, 10);
+  }, 100);
 };
