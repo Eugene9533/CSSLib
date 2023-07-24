@@ -93,9 +93,9 @@ html, body {
   box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.25);
 }
 
-/* #save {
+#save {
   color: #03a9f4;
-} */
+}
 
 .hidden {
   display: none;
