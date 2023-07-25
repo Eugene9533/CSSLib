@@ -18,10 +18,12 @@ tesGenerate.addEventListener("click", function () {
     playNextTransition();
     lastTransitionAt = refresh;
     boo = false;
-    tesGenerate.setAttribute("style", "color: #00000091; cursor:default");
+    tesGenerate.setAttribute("disabled", "disabled");
+    tesGenerate.setAttribute("style", "cursor: default");
     setTimeout(() => {
       boo = true;
-      tesGenerate.setAttribute("style", "");
+      tesGenerate.removeAttribute("disabled", "style");
+      tesGenerate.removeAttribute("style");
     }, transitionDuration);
   }
 });
