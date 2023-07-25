@@ -1,10 +1,28 @@
 //////////////////////////////
 // Demo Functions
 //////////////////////////////
+let transitionDuration = 3000;
+let lastTransitionAt;
+let refresh;
+let boo = true;
+
+function playNextTransition() {
+  tesselation.next(transitionDuration);
+  gradients.next(transitionDuration);
+}
 
 let tesGenerate = document.querySelector(".tesGenerate");
 
-tesGenerate.addEventListener("click", function () {});
+tesGenerate.addEventListener("click", function () {
+  if (boo) {
+    playNextTransition();
+    lastTransitionAt = refresh;
+    boo = false;
+    setTimeout(() => {
+      boo = true;
+    }, transitionDuration);
+  }
+});
 
 function init(showStats) {
   // stats
@@ -25,20 +43,14 @@ function init(showStats) {
   tesselation.setup(svg);
   gradients.setup();
 
-  var lastTransitionAt,
-    transitionDelay = 10000,
-    transitionDuration = 3000;
-
-  function playNextTransition() {
-    tesselation.next(transitionDuration);
-    gradients.next(transitionDuration);
-  }
+  var transitionDelay = 20000;
 
   function tick(time) {
     if (!lastTransitionAt || time - lastTransitionAt > transitionDelay) {
       lastTransitionAt = time;
       playNextTransition();
     }
+    refresh = time;
     window.requestAnimationFrame(tick);
   }
   window.requestAnimationFrame(tick);
