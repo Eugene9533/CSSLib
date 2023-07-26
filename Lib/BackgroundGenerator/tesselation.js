@@ -24,7 +24,7 @@ tesGenerate.addEventListener("click", function () {
       boo = true;
       tesGenerate.removeAttribute("disabled", "style");
       tesGenerate.removeAttribute("style");
-    }, transitionDuration);
+    }, 2000);
   }
 });
 
@@ -335,7 +335,7 @@ var tesselation = (function () {
           t * 0.4,
           { opacity: 0 },
           {
-            opacity: 0.3 + 0.25 * Math.random(),
+            opacity: 0.2 + 0.25 * Math.random(),
             delay: t * ((0.3 * i) / n + 0.3),
             ease: Back.easeOut,
           }
