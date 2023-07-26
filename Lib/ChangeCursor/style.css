@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+.back {
+  display: grid;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  background: #5656565e;
+  border: 0;
+  border-radius: 0 0 10px 0;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.back svg {
+  fill: #ffffff;
+}
+
+.back:hover{
+  transform: scale(1.2);
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: none;
+  font-family: 'Quicksand', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #000;
+}
+
+ul {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+li {
+  list-style: none;
+  width: fit-content;
+}
+
+a {
+  position: relative;
+  display: inline-block;
+  margin: 10px 0;
+  font-size: 2em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+}
+
+.cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: difference;
+}
+
+li:hover ~ .cursor {
+  transform: translate(-50%, -50%) scale(4);
+  background: #000;
+  box-shadow: 0 0 0 100vh #fff;
+}

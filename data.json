@@ -118,5 +118,29 @@
     "description" : "Dashboard",
     "img" : "Img/Dashboard.png",
     "href" : "./Lib/Dashboard/index.html"
+  },
+  {
+    "id" : "21",
+    "description" : "Change cursor",
+    "img" : "Img/ChangeCursor.png",
+    "href" : "./Lib/ChangeCursor/index.html"
+  },
+  {
+    "id" : "22",
+    "description" : "Media menu",
+    "img" : "Img/MediaMenu.png",
+    "href" : "./Lib/MediaMenu/index.html"
+  },
+  {
+    "id" : "23",
+    "description" : "Parallax",
+    "img" : "Img/Parallax.png",
+    "href" : "./Lib/Parallax/index.html"
+  },
+  {
+    "id" : "23",
+    "description" : "Scroll paralax",
+    "img" : "Img/ScrollParalax.png",
+    "href" : "./Lib/ScrollParalax/index.html"
   }
 ]
