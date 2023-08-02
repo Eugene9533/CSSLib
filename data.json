@@ -138,13 +138,7 @@
     "href" : "./Lib/Parallax/index.html"
   },
   {
-    "id" : "23",
-    "description" : "Scroll paralax",
-    "img" : "Img/ScrollParalax.png",
-    "href" : "./Lib/ScrollParalax/index.html"
-  },
-  {
-    "id" : "23",
+    "id" : "24",
     "description" : "3D Animated",
     "img" : "Img/3DAnimated.png",
     "href" : "./Lib/3DAnimated/index.html"
