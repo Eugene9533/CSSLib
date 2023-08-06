@@ -1,0 +1,93 @@
+.back {
+  display: grid;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  background: #5656565e;
+  border: 0;
+  border-radius: 0 0 10px 0;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.back svg {
+  fill: #ffffff;
+}
+
+.back:hover{
+  transform: scale(1.2);
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #111;
+}
+
+.box {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+.box span {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: url(img.jpg);
+  background-repeat: no-repeat;
+  animation: animate 10s linear infinite;
+}
+
+@keyframes animate {
+0%, 10% {
+  scale: 1;
+  rotate: 0deg;
+  translate: 0 0;
+  transform-origin: center;
+}
+20%, 30% {
+  scale: 0.5;
+  rotate: 0deg;
+  translate: 0 0;
+  transform-origin: center;
+}
+40% {
+  scale: 0.5;
+  rotate: 360deg;
+  translate: 150px 0;
+  transform-origin: 500px;
+}
+70% {
+  scale: 0.5;
+  rotate: 720deg;
+  translate: -150px 0;
+  transform-origin: -500px;
+}
+90% {
+  scale: 0.5;
+  rotate: 0deg;
+  translate: 0 0;
+  transform-origin: center;
+}
+100% {
+  scale: 1;
+  rotate: 0deg;
+  translate: 0 0;
+  transform-origin: center;
+}
+}
