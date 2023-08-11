@@ -148,5 +148,11 @@
     "description" : "Image animation",
     "img" : "Img/ImageAnimation.png",
     "href" : "./Lib/ImageAnimation/index.html"
+  },
+  {
+    "id" : "26",
+    "description" : "Symbol rain",
+    "img" : "Img/SymbolRain.png",
+    "href" : "./Lib/SymbolRain/index.html"
   }
 ]
