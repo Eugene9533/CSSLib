@@ -21,12 +21,25 @@
   background: #535353;
 }
 
+h1 {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  margin: 50px 0 50px 0;
+  font-size: 3rem;
+  background: black;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 5px transparent;
+  color: white;
+}
+
 .main {
   position: relative;
   display: flex;
   justify-content: center;
   padding-bottom: 100px; 
-  top: 200px;
+  flex-wrap: wrap;
 }
 
 .cards {
@@ -68,6 +81,14 @@
   text-decoration: none;
   font-size: 1.2em;
   color: #000000;
+}
+
+.line {
+  position: relative;
+  margin-top: 50px;
+  width: 80%;
+  height: 2px;
+  background: black;
 }
 
 @media only screen and (max-width: 1430px) and (min-width: 1090px) {
