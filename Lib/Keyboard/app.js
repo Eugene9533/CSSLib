@@ -323,6 +323,9 @@ input.addEventListener("input", () => {
   let letter = input.value[input.value.length - 1];
   if (pattern.test(letter) && en[0].classList.contains("visVisible"))
     switchLang();
+  let patternEn = /[A-z#]+/;
+  if (patternEn.test(letter) && ru[0].classList.contains("visVisible"))
+    switchLang();
 });
 
 // Назначение символов
