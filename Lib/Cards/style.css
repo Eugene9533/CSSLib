@@ -95,6 +95,7 @@
   position: relative;
   transition: 0.35s linear;
   overflow: hidden;
+  width: 0vw;
 }
 
 .counter {
@@ -107,4 +108,13 @@
   color: #ffffff1f;
   font-size: 2em;
   font-weight: 700;
+}
+
+.main:nth-child(1) {
+  width: 100vw;
+  right: 0%;
+}
+
+.main:last-child {
+  left: -100%;
 }

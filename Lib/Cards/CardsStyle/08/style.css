@@ -1,0 +1,55 @@
+.bodyEight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  min-width: 100vw;
+  background: #0f222f;
+}
+
+.bodyEight .containerEight {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bodyEight .containerEight .glass {
+  position: relative;
+  width: 200px;
+  height: 240px;
+  background: linear-gradient(#fff2, transparent);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 25px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  border-radius: 10px;
+  margin: 0 -45px;
+  transform: rotate(calc(var(--r) * 1deg));
+}
+
+.bodyEight .containerEight:hover .glass {
+  transform: rotate(0deg);
+  margin: 0 20px;
+}
+
+.bodyEight .containerEight .glass::before {
+  content: attr(data-text);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.bodyEight .containerEight .glass i {
+  font-size: 4em;
+  color: #fff;
+}

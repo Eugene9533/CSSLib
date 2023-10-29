@@ -1,0 +1,146 @@
+.bodySeven {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  min-width: 100vw;
+  background: #222;
+}
+
+.bodySeven .containerSeven {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+  flex-wrap: wrap;
+}
+
+.bodySeven .containerSeven .card {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  background: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.bodySeven .containerSeven .card .content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 25px;
+  gap: 10px;
+  transition-delay: 0s;
+  transition: 0.5s;
+  opacity: 0;
+}
+
+.bodySeven .containerSeven .card:hover .content {
+  opacity: 1;
+  transition-delay: 0.5s;
+}
+
+.bodySeven .containerSeven .card .content h2 {
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--clr);
+}
+
+.bodySeven .containerSeven .card .content p {
+  text-align: center;
+  color: #fff;
+}
+
+.bodySeven .containerSeven .card .content a {
+  color: #fff;
+  background: var(--clr);
+  padding: 10px 15px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.bodySeven .containerSeven .card .imgBx,
+.bodySeven .containerSeven .card .textBx {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+
+.bodySeven .containerSeven .card .imgBx {
+  background: #fff;
+  height: 120px;
+  z-index: 1;
+  transform-origin: bottom;
+}
+
+.bodySeven .containerSeven .card:hover .imgBx {
+  transform: translateY(-100%) rotateX(90deg);
+}
+
+.bodySeven .containerSeven .card .textBx {
+  height: 280px;
+  background: var(--clr);
+  border-top: 8px solid #333;
+  transform-origin: top;
+  transition-delay: 0.5s;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.bodySeven .containerSeven .card:hover .textBx {
+  transform: translateY(100%) rotateX(90deg);
+}
+
+.bodySeven .containerSeven .card .textBx h2 {
+  color: #222;
+  font-size: 1.25em;
+  letter-spacing: 0.15em;
+  font-weight: 500;
+  text-transform: uppercase;
+  background: #fff;
+  padding: 5px 25px;
+  box-shadow: 0 0 0 8px #333;
+}
+
+.bodySeven .containerSeven .card .imgBx::before {
+  content: "";
+  position: absolute;
+  bottom: -70px;
+  width: 144px;
+  height: 74px;
+  background: #fff;
+  border-bottom-left-radius: 80px;
+  border-bottom-right-radius: 80px;
+  z-index: 1;
+}
+
+.bodySeven .containerSeven .card .imgBx img {
+  position: relative;
+  top: 50px;
+  z-index: 10;
+  width: 100px;
+  height: 100px;
+}
+
+.bodySeven .containerSeven .card .textBx::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  width: 160px;
+  height: 80px;
+  background: #333;
+  border-bottom-left-radius: 80px;
+  border-bottom-right-radius: 80px;
+}
