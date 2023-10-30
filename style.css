@@ -17,21 +17,17 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  border-radius: 5px;
-  background: #535353;
+  border-radius: 2px;
+  background: #333333;
 }
 
-h1 {
+h2 {
   position: relative;
   text-align: center;
   width: 100%;
   margin: 50px 0 50px 0;
   font-size: 3rem;
-  background: black;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-stroke: 5px transparent;
-  color: white;
+  color:#333333;
 }
 
 .main {
@@ -59,12 +55,12 @@ h1 {
   width: 300px;
   height: 200px;
   background-size: cover;
-  transition: 1s;
+  transition: 0.3s;
 }
 
 .container:hover {
-  transform: scale(1.2);
-  box-shadow: 0px 10px 20px 3px rgba(0, 0, 0, 0.5);
+  transform: scale(1.1);
+  box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.5);
 }
 
 .description {
@@ -80,6 +76,11 @@ h1 {
 .text {
   text-decoration: none;
   font-size: 1.2em;
+  color: #363636;
+  transition: 0.3s;
+}
+
+.container:hover .text {
   color: #000000;
 }
 
@@ -88,7 +89,7 @@ h1 {
   margin-top: 50px;
   width: 80%;
   height: 2px;
-  background: black;
+  background: #333333;
 }
 
 @media only screen and (max-width: 1430px) and (min-width: 1090px) {
