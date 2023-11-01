@@ -154,5 +154,11 @@
     "description" : "Cards",
     "img" : "Img/Cards.png",
     "href" : "./Lib/Cards/index.html"
+  },
+  {
+    "id" : "27",
+    "description" : "Image gallery",
+    "img" : "Img/ImageGallery.png",
+    "href" : "./Lib/ImageGallery/index.html"
   }
 ]
