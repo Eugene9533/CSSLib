@@ -160,5 +160,11 @@
     "description" : "Image gallery",
     "img" : "Img/ImageGallery.png",
     "href" : "./Lib/ImageGallery/index.html"
+  },
+  {
+    "id" : "28",
+    "description" : "Ticker",
+    "img" : "Img/Ticker.png",
+    "href" : "./Lib/Ticker/index.html"
   }
 ]
