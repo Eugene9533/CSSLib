@@ -1,54 +1,20 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
-
-.back {
-  display: grid;
-  position: fixed;
-  justify-content: center;
-  align-items: center;
-  z-index: 100;
-  left: 0;
-  top: 0;
-  width: 50px;
-  height: 50px;
-  background: #5656565e;
-  border: 0;
-  border-radius: 0 0 10px 0;
-  transition: 0.2s;
-  cursor: pointer;
-}
-
-.back svg {
-  fill: #ffffff;
-}
-
-.back:hover{
-  transform: scale(1.2);
-}
-
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
-
-body{
+.bodyOne{
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  height: 100vh;
+  width: 100vw;
   background: #151517;
 }
 
-nav {
+.bodyOne nav {
   position: relative;
   display: flex;
-  /* gap: 30px; */
   background: #222327;
   padding: 0 60px;
 }
 
-nav a {
+.bodyOne nav a {
   position: relative;
   color: #999;
   text-decoration: none;
@@ -62,11 +28,11 @@ nav a {
   transition: 0.5s;
 }
 
-nav a.active {
+.bodyOne nav a.active {
   color: #222327;
 }
 
-#indicator {
+.bodyOne #indicator {
   position: absolute;
   height: 75px;
   width: 150px;
@@ -75,7 +41,7 @@ nav a.active {
   transition: 0.5s;
 }
 
-#indicator::before {
+.bodyOne #indicator::before {
   content: '';
   position: absolute;
   left: -30px;
@@ -90,7 +56,7 @@ nav a.active {
   transition: 0.5s;
 }
 
-#indicator::after {
+.bodyOne #indicator::after {
   content: '';
   position: absolute;
   right: -30px;
@@ -105,7 +71,7 @@ nav a.active {
   transition: 0.5s;
 }
 
-#indicator.change::before {
+.bodyOne #indicator.change::before {
   left: -10px;
   box-shadow: -15px 30px #29fd53,
   -5px 60px #29fd53,
@@ -113,7 +79,7 @@ nav a.active {
   -20px 45px #222327;
 }
 
-#indicator.change::after {
+.bodyOne #indicator.change::after {
   right: -20px;
   box-shadow: 10px 30px #29fd53,
   20px 60px #29fd53,

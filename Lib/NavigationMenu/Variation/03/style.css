@@ -1,46 +1,13 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
-
-.back {
-  display: grid;
-  position: fixed;
-  justify-content: center;
-  align-items: center;
-  z-index: 100;
-  left: 0;
-  top: 0;
-  width: 50px;
-  height: 50px;
-  background: #5656565e;
-  border: 0;
-  border-radius: 0 0 10px 0;
-  transition: 0.2s;
-  cursor: pointer;
-}
-
-.back svg {
-  fill: #ffffff;
-}
-
-.back:hover{
-  transform: scale(1.2);
-}
-
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
-
-body {
+.bodyThree {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  height: 100vh;
+  width: 100vw;
   background: linear-gradient(135deg, #e91e63, #673ab7);
 }
 
-.navigation {
+.bodyThree .navigation {
   position: relative;
   width: 60px;
   height: 60px;
@@ -55,11 +22,11 @@ body {
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
 }
 
-.active {
+.bodyThree .active {
   width: 600px;
 }
 
-.toggleMenu {
+.bodyThree .toggleMenu {
   position: absolute;
   width: 60px;
   height: 60px;
@@ -73,7 +40,7 @@ body {
   transition-delay: 0.5s;
 }
 
-.active .toggleMenu {
+.bodyThree .active .toggleMenu {
   background: #ff4181;
   transition-delay: 0s;
   transform: translateY(60px);
@@ -82,7 +49,7 @@ body {
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
 }
 
-.toggleMenu::before {
+.bodyThree .toggleMenu::before {
   content: '';
   position: absolute;
   width: 30px;
@@ -94,7 +61,7 @@ body {
   transition-delay: 0.5s;
 }
 
-.toggleMenu::after {
+.bodyThree .toggleMenu::after {
   content: '';
   position: absolute;
   width: 30px;
@@ -106,31 +73,31 @@ body {
   transition-delay: 0.5s;
 }
 
-.active .toggleMenu::before {
+.bodyThree .active .toggleMenu::before {
   transition-delay: 0s;
   background: #fff;
   transform: translateY(0px) rotate(45deg) scale(0.6);
 }
 
-.active .toggleMenu::after {
+.bodyThree .active .toggleMenu::after {
   transition-delay: 0s;
   background: #fff;
   transform: translateY(0px) rotate(315deg) scale(0.6);
 }
 
-li {
+.bodyThree li {
   list-style: none;
   transition: 0.5s;
   transform: scale(0);
 }
 
-.active li {
+.bodyThree .active li {
   transition-delay: 0.75s;
   display: flex;
   transform: scale(1);
 }
 
-a {
+.bodyThree a {
   text-decoration: none;
   color: #333;
   text-transform: uppercase;
@@ -140,7 +107,7 @@ a {
   transition: 0.5s;
 }
 
-a:hover {
+.bodyThree a:hover {
   background: #ff4181;
   color: #fff;
 }

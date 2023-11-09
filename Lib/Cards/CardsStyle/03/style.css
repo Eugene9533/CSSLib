@@ -79,7 +79,7 @@
   transform: translateX(-50%);
   background: #000;
   transition: 0.5s;
-  z-index: 10;
+  z-index: 2;
   overflow: hidden;
   display: flex;
   justify-content: center;

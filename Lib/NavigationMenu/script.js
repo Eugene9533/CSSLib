@@ -7,6 +7,10 @@ let counter = () => {
     document.querySelector(".counter").innerHTML = `${num + 1}/${len + 1}`;
     if (num <= 8)
         document.querySelector(".counter").innerHTML = `0${num + 1}/${len + 1}`;
+    if (len <= 8)
+        document.querySelector(".counter").innerHTML = `0${num + 1}/0${
+            len + 1
+        }`;
 };
 
 counter();

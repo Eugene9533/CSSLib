@@ -1,46 +1,13 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
-
-.back {
-  display: grid;
-  position: fixed;
-  justify-content: center;
-  align-items: center;
-  z-index: 100;
-  left: 0;
-  top: 0;
-  width: 50px;
-  height: 50px;
-  background: #5656565e;
-  border: 0;
-  border-radius: 0 0 10px 0;
-  transition: 0.2s;
-  cursor: pointer;
-}
-
-.back svg {
-  fill: #ffffff;
-}
-
-.back:hover{
-  transform: scale(1.2);
-}
-
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
-
-body {
+.bodyTwo {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  height: 100vh;
+  width: 100vw;
   background: #222327;
 }
 
-.navigation {
+.bodyTwo .navigation {
   position: relative;
   width: 450px;
   height: 80px;
@@ -50,20 +17,20 @@ body {
   border-radius: 10px;
 }
 
-ul {
+.bodyTwo ul {
   position: relative;
   display: flex;
   width: 400px;
 }
 
-li {
+.bodyTwo li {
   position: relative;
   list-style: none;
   width: 80px;
   height: 80px;
 }
 
-a {
+.bodyTwo a {
   position: relative;
   display: flex;
   justify-content: center;
@@ -74,7 +41,7 @@ a {
   font-weight: 500;
 }
 
-.icon {
+.bodyTwo .icon {
   position: relative;
   display: block;
   line-height: 85px;
@@ -84,16 +51,16 @@ a {
   color: rgba(255, 255, 255, 0.5)
 }
 
-a:hover .icon {
+.bodyTwo a:hover .icon {
   color: rgba(255, 255, 255, 1)
 }
 
-.active .icon {
+.bodyTwo .active .icon {
   color: #29fd53;
   transform: translateY(-8px);
 }
 
-.text {
+.bodyTwo .text {
   position: absolute;
   font-weight: 600;
   font-size: 0.6em;
@@ -105,12 +72,12 @@ a:hover .icon {
   z-index: 1;
 }
 
-.active .text {
+.bodyTwo .active .text {
   opacity: 1;
   transform: translateY(16px);
 }
 
-.indicator {
+.bodyTwo .indicator {
   position: absolute;
   width: 80px;
   height: 80px;
@@ -121,7 +88,7 @@ a:hover .icon {
   transition: 0.5s;
 }
 
-.indicator::before {
+.bodyTwo .indicator::before {
   content: '';
   position: absolute;
   bottom: 14px;
@@ -131,15 +98,15 @@ a:hover .icon {
   border-radius: 10px;
 }
 
-li:nth-child(2).active ~ .indicator {
+.bodyTwo li:nth-child(2).active ~ .indicator {
   transform: translateX(calc(80px * 1));
 }
-li:nth-child(3).active ~ .indicator {
+.bodyTwo li:nth-child(3).active ~ .indicator {
   transform: translateX(calc(80px * 2));
 }
-li:nth-child(4).active ~ .indicator {
+.bodyTwo li:nth-child(4).active ~ .indicator {
   transform: translateX(calc(80px * 3));
 }
-li:nth-child(5).active ~ .indicator {
+.bodyTwo li:nth-child(5).active ~ .indicator {
   transform: translateX(calc(80px * 4));
 }
