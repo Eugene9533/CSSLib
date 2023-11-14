@@ -1,0 +1,101 @@
+.back {
+  display: grid;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  background: #5656565e;
+  border: 0;
+  border-radius: 0 0 10px 0;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.back svg {
+  fill: #ffffff;
+}
+
+.back:hover{
+  transform: scale(1.2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: consolas;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #eee;
+  transition: 0.5s;
+  transition-delay: 0.5s;
+}
+
+.container {
+  position: relative;
+  width: 500px;
+  padding: 10px;
+  border-radius: 50px;
+  box-shadow: inset 0 10px 5px rgba(0, 0, 0, 0.075),
+  0 15px 8px rgba(0, 0, 0, 0.05),
+  0 10px 15px rgba(0, 0, 0, 0.05),
+  inset 0 -10px 15px rgba(255, 255, 255, 0.9);
+  transition: 0.5s;
+}
+
+.container::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 95%;
+  height: 5px;
+  border-radius: 20px;
+  background: #fff4;
+}
+
+.percentBar {
+  position: relative;
+  display: block;
+  width: 0;
+  height: 10px;
+  background: #03a9f4;
+  border-radius: 20px;
+}
+
+.number {
+  position: absolute;
+  top: -64px;
+  right: -55px;
+  padding: 10px 15px;
+  color: #03a9f4;
+  border-radius: 50px;
+  border-bottom-left-radius: 0;
+  box-shadow: inset 0 10px 5px rgba(0, 0, 0, 0.075),
+  0 15px 8px rgba(0, 0, 0, 0.05),
+  0 10px 15px rgba(0, 0, 0, 0.05),
+  inset 0 -10px 15px rgba(255, 255, 255, 0.9);
+}
+
+h2 {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  font-weight: 500;
+  font-size: 10em;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  transition: 0.5s;
+  color: #fff;
+  transition-delay: 1s;
+}

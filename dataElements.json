@@ -154,5 +154,11 @@
     "description" : "Ticker",
     "img" : "Img/Ticker.png",
     "href" : "./Lib/Ticker/index.html"
+  },
+  {
+    "id" : "27",
+    "description" : "Preloader",
+    "img" : "Img/Preloader.png",
+    "href" : "./Lib/Preloader/index.html"
   }
 ]
