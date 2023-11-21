@@ -68,24 +68,18 @@ body {
   background: #ffffff31;
 }
 
-.btnR {
+.btnR, .btnL {
   display: flex;
   align-items: center;
   right: 0px; 
   position: absolute; 
-  z-index: 10;
+  z-index: 99;
   height: 100vh;
   width: 50px;
 }
 
 .btnL {
-  display: flex;
-  align-items: center;
   left: 0px; 
-  position: absolute; 
-  z-index: 10;
-  height: 100vh;
-  width: 50px;
 }
 
 .container {
@@ -99,8 +93,17 @@ body {
   position: absolute;
   transition: 1s ease;
   overflow: hidden;
+  z-index: 1;
   width: 100vw;
   left: 100%
+}
+
+.main:nth-child(1) {
+  left: 0%;
+}
+
+.main:nth-last-child(1) {
+  left: -100%;
 }
 
 .counter {

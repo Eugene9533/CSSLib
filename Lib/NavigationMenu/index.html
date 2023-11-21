@@ -6,9 +6,10 @@
     <title>CSSLib/NavigationMenu</title>
     <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="./Variation/01/style.css">
-    <link rel="stylesheet" href="./Variation/02/style.css">
-    <link rel="stylesheet" href="./Variation/03/style.css">
+    <link rel="stylesheet" href="./MenuStyle/01/style.css">
+    <link rel="stylesheet" href="./MenuStyle/02/style.css">
+    <link rel="stylesheet" href="./MenuStyle/03/style.css">
+    <link rel="stylesheet" href="./MenuStyle/04/style.css">
   </head>
   <body>
     <form action="../../index.html" onclick="event.stopPropagation()">
@@ -24,20 +25,19 @@
     </div>
     <div class="counter"></div>
     <div class="container">
-      <div class="main" style="left: 0%;">
+      <div class="main">
         <div class="bodyOne">
           <nav>
             <a href="#" class="active">Home</a>
-            <a href="#">About</a>
-            <a href="#">Services</a>
-            <a href="#">Portfolio</a>
-            <a href="#">Team</a>
-            <a href="#">Contact</a>
+            <a href="#">Profile</a>
+            <a href="#">Messages</a>
+            <a href="#">Photos</a>
+            <a href="#">Settings</a>
             <div id="indicator" class="change" style="left: 60px; width: 192px; display: block;"></div>
           </nav>
         </div>
       </div>
-      <div class="main" style="left: 100%;">
+      <div class="main">
         <div class="bodyTwo">
           <div class="navigation">
             <ul>
@@ -86,24 +86,37 @@
           </div>
         </div>
       </div>
-      <div class="main" style="left: -100%;">
+      <div class="main">
         <div class="bodyThree">
           <ul class="navigation">
             <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Team</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Messages</a></li>
+            <li><a href="#">Photos</a></li>
+            <li><a href="#">Settings</a></li>
             <span class="toggleMenu"></span>
           </ul>
         </div>
       </div>
+      <div class="main">
+        <div class="bodyFour">
+          <nav>
+            <a href="#">Home</a>
+            <a href="#">Profile</a>
+            <a href="#">Messages</a>
+            <a href="#">Photos</a>
+            <a href="#">Settings</a>
+            <div id="marker" style="left: 0px; width: 104px;"></div>
+          </nav>
+        </div>
+      </div>
     </div>
     <script src="script.js"></script>
-    <script src="./Variation/01/script.js"></script>
+    <script src="./MenuStyle/01/script.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="./Variation/02/script.js"></script>
-    <script src="./Variation/03/script.js"></script>
+    <script src="./MenuStyle/02/script.js"></script>
+    <script src="./MenuStyle/03/script.js"></script>
+    <script src="./MenuStyle/04/script.js"></script>
   </body>
 </html>

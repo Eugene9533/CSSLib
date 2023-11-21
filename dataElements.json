@@ -160,5 +160,11 @@
     "description" : "Preloader",
     "img" : "Img/Preloader.png",
     "href" : "./Lib/Preloader/index.html"
+  },
+  {
+    "id" : "28",
+    "description" : "Background stars",
+    "img" : "Img/BackgroundStars.png",
+    "href" : "./Lib/BackgroundStars/index.html"
   }
 ]

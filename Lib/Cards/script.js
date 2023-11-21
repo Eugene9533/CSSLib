@@ -18,16 +18,16 @@ document.querySelector(".next").onclick = () => {
             btn = true;
         }, 1000);
         if (num >= len) {
-            cards[num].style = "left: -100%; z-index: 1";
+            cards[num].style = "left: -100%; z-index: 20";
             num = 0;
-            cards[num].style = "left: 0%; z-index: 5";
+            cards[num].style = "left: 0%; z-index: 50";
             cards[num + 1].style = "left: 100%;";
             counter();
             return;
         }
-        cards[num].style = "left: -100%; z-index: 1";
-        cards[num + 1].style = "left: 0%; z-index: 5";
-        if (cards[num + 2]) cards[num + 2].style = "left: 100%;";
+        cards[num].style = "left: -100%; z-index: 20";
+        cards[num + 1].style = "left: 0%; z-index: 50";
+        if (cards[num + 2]) cards[num + 2].style = "left: 100%; z-index: 20";
         num++;
         if (num == len) cards[0].style = "left: 100%;";
     }
@@ -41,15 +41,17 @@ document.querySelector(".prev").onclick = () => {
             btn = true;
         }, 1000);
         if (num <= 0) {
-            cards[num].style = "left: 100%; z-index: 1";
+            cards[num].style = "left: 100%; z-index: 20";
             num = len;
-            cards[num].style = "left: 0%; z-index: 5";
-            cards[num - 1].style = "left: -100%;";
+            cards[num].style = "left: 0%; z-index: 50";
+            setTimeout(() => {
+                cards[num - 1].style = "left: -100%;";
+            }, 500);
             counter();
             return;
         }
-        cards[num].style = "left: 100%; z-index: 1";
-        cards[num - 1].style = "left: 0%; z-index: 5";
+        cards[num].style = "left: 100%; z-index: 20";
+        cards[num - 1].style = "left: 0%; z-index: 50";
         if (cards[num - 2]) cards[num - 2].style = "left: -100%;";
         num--;
         if (num == 0) cards[len].style = "left: -100%;";
