@@ -19,9 +19,9 @@
   },
   {
     "id" : "04",
-    "description" : "Memory game",
-    "img" : "Img/MemoryGame.png",
-    "href" : "./Lib/MemoryGame/index.html"
+    "description" : "GAMES",
+    "img" : "Img/GAMES.png",
+    "href" : "./Lib/Games/index.html"
   },
   {
     "id" : "05",
