@@ -48,10 +48,11 @@ h1, h2 {
 }
 
 .main {
+  min-height: calc(100vh - 200px);
   position: relative;
   display: flex;
   justify-content: center;
-  padding-bottom: 100px; 
+  margin-bottom: 100px; 
   flex-wrap: wrap;
 }
 
@@ -138,26 +139,6 @@ footer .contact {
   gap: 20px;
 }
 
-/* footer a i::after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 5px;
-  left: 3px;
-  border-radius: 5px;
-  z-index: 1;
-  width: 30px;
-  height: 30px;
-  background: #fff;
-  opacity: 1;
-} */
-
-/* .fa-brands::before {
-  position: relative;
-  display: block;
-  z-index: 2;
-} */
-
 footer .back {
   position: relative;
 }
@@ -216,17 +197,11 @@ footer a:hover .fa-square-instagram {
   }
 }
 @media only screen and (max-width: 1089px) and (min-width: 745px) {
-  .main {
-    top: 100px;
-  }
   .cards {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 @media only screen and (max-width: 744px) {
-  .main {
-    top: 100px;
-  }
   .cards {
     grid-template-columns: repeat(1, 1fr);
   }
