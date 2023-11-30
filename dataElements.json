@@ -1,170 +1,182 @@
 [
   {
-    "id" : "01",
+    "type" : "css",
     "description" : "Navigation menu",
     "img" : "Img/NavigationMenu.png",
     "href" : "./Lib/NavigationMenu/index.html"
   },
   {
-    "id" : "02",
+    "type" : "css",
     "description" : "Line stripes",
     "img" : "Img/LineStripes.png",
     "href" : "./Lib/LineStripes/index.html"
   },
   {
-    "id" : "03",
+    "type" : "css",
     "description" : "Background falling lines",
     "img" : "Img/BackgroundFallingLines.png",
     "href" : "./Lib/BackgroundFallingLines/index.html"
   },
   {
-    "id" : "04",
-    "description" : "GAMES",
-    "img" : "Img/GAMES.png",
-    "href" : "./Lib/Games/index.html"
-  },
-  {
-    "id" : "05",
+    "type" : "ga",
     "description" : "Sticky notes",
     "img" : "Img/StickyNotes.png",
     "href" : "./Lib/StickyNotes/index.html"
   },
   {
-    "id" : "06",
+    "type" : "ga",
     "description" : "To do list",
     "img" : "Img/ToDoList.png",
     "href" : "./Lib/ToDoList/index.html"
   },
   {
-    "id" : "07",
+    "type" : "css",
     "description" : "Analog clock",
     "img" : "Img/AnalogClock.png",
     "href" : "./Lib/AnalogClock/index.html"
   },
   {
-    "id" : "08",
+    "type" : "css",
     "description" : "Rocket",
     "img" : "Img/Rocket.png",
     "href" : "./Lib/Rocket/index.html"
   },
   {
-    "id" : "09",
+    "type" : "css",
     "description" : "Comet effect",
     "img" : "Img/CometEffect.png",
     "href" : "./Lib/CometEffect/index.html"
   },
   {
-    "id" : "10",
+    "type" : "css",
     "description" : "Fill text hover",
     "img" : "Img/FillTextHover.png",
     "href" : "./Lib/FillTextHover/index.html"
   },
   {
-    "id" : "11",
+    "type" : "css",
     "description" : "Background light hover",
     "img" : "Img/BackgroundLightHover.png",
     "href" : "./Lib/BackgroundLightHover/index.html"
   },
   {
-    "id" : "12",
+    "type" : "css",
     "description" : "Background generator",
     "img" : "Img/BackgroundGenerator.png",
     "href" : "./Lib/BackgroundGenerator/index.html"
   },
   {
-    "id" : "13",
+    "type" : "css",
     "description" : "Happy holi",
     "img" : "Img/HappyHoli.png",
     "href" : "./Lib/HappyHoli/index.html"
   },
   {
-    "id" : "14",
+    "type" : "css",
     "description" : "Rank list",
     "img" : "Img/RankList.png",
     "href" : "./Lib/RankList/index.html"
   },
   {
-    "id" : "15",
+    "type" : "css",
     "description" : "CSS Chessboard",
     "img" : "Img/CSSChessboard.png",
     "href" : "./Lib/CSSChessboard/index.html"
   },
   {
-    "id" : "16",
+    "type" : "ga",
     "description" : "Keyboard",
     "img" : "Img/Keyboard.png",
     "href" : "./Lib/Keyboard/index.html"
   },
   {
-    "id" : "17",
+    "type" : "css",
     "description" : "Dashboard",
     "img" : "Img/Dashboard.png",
     "href" : "./Lib/Dashboard/index.html"
   },
   {
-    "id" : "18",
+    "type" : "css",
     "description" : "Change cursor",
     "img" : "Img/ChangeCursor.png",
     "href" : "./Lib/ChangeCursor/index.html"
   },
   {
-    "id" : "19",
+    "type" : "css",
     "description" : "Media menu",
     "img" : "Img/MediaMenu.png",
     "href" : "./Lib/MediaMenu/index.html"
   },
   {
-    "id" : "20",
+    "type" : "css",
     "description" : "Parallax",
     "img" : "Img/Parallax.png",
     "href" : "./Lib/Parallax/index.html"
   },
   {
-    "id" : "21",
+    "type" : "css",
     "description" : "3D Animated",
     "img" : "Img/3DAnimated.png",
     "href" : "./Lib/3DAnimated/index.html"
   },
   {
-    "id" : "22",
+    "type" : "css",
     "description" : "Image animation",
     "img" : "Img/ImageAnimation.png",
     "href" : "./Lib/ImageAnimation/index.html"
   },
   {
-    "id" : "23",
+    "type" : "css",
     "description" : "Rain",
     "img" : "Img/Rain.png",
     "href" : "./Lib/Rain/index.html"
   },
   {
-    "id" : "24",
+    "type" : "css",
     "description" : "Cards",
     "img" : "Img/Cards.png",
     "href" : "./Lib/Cards/index.html"
   },
   {
-    "id" : "25",
+    "type" : "css",
     "description" : "Image gallery",
     "img" : "Img/ImageGallery.png",
     "href" : "./Lib/ImageGallery/index.html"
   },
   {
-    "id" : "26",
+    "type" : "css",
     "description" : "Ticker",
     "img" : "Img/Ticker.png",
     "href" : "./Lib/Ticker/index.html"
   },
   {
-    "id" : "27",
+    "type" : "css",
     "description" : "Preloader",
     "img" : "Img/Preloader.png",
     "href" : "./Lib/Preloader/index.html"
   },
   {
-    "id" : "28",
+    "type" : "css",
     "description" : "Background stars",
     "img" : "Img/BackgroundStars.png",
     "href" : "./Lib/BackgroundStars/index.html"
+  },
+  {
+    "type" : "site",
+    "description" : "Cozy House",
+    "img" : "Img/Shelter.png",
+    "href" : "https://shelter-dom.vercel.app/"
+  },
+  {
+    "type" : "site",
+    "description" : "Paint",
+    "img" : "Img/Paint.png",
+    "href" : "https://paint-sable.vercel.app/"
+  },
+  {
+    "type" : "ga",
+    "description" : "Memory game",
+    "img" : "Img/MemoryGame.png",
+    "href" : "./Lib/MemoryGame/index.html"
   }
 ]
