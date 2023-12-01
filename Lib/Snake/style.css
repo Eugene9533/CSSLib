@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+.back {
+  display: grid;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  background: #5656565e;
+  border: 0;
+  border-radius: 0 0 10px 0;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.back svg {
+  fill: #ffffff;
+}
+
+.back:hover{
+  transform: scale(1.2);
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #E3F2FD;
+}
+
+.modal {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(1px);
+  background: rgba(0, 0, 0, 0.534);
+}
+
+.modal-window {
+  display: flex;
+  text-align: center;
+  width: 60vmin;
+  height: 35vmin;
+  background: #293447;
+  border-radius: 5px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+}
+
+h2 {
+  font-weight: 500;
+  font-size: 3rem;
+  color: #B8C6DC;
+}
+
+.newGame {
+  font-size: 1.2rem;
+  font-weight: 500;
+  background: #212837;
+  color: #B8C6DC;
+  border-radius: 5px;
+  width: 140px;
+  height: 50px;
+  border: 1px solid #B8C6DC;
+  outline: none;
+}
+
+.visible {
+  display: flex;
+}
+
+.wrapper {
+  width: 65vmin;
+  height: 70vmin;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 5px;
+  background: #293447;
+}
+
+.game-details {
+  color: #B8C6DC;
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 20px 27px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.play-board {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template: repeat(30, 1fr) / repeat(30, 1fr);
+  background: #212837;
+}
+
+.play-board .food {
+  background: #FF003D;
+}
+
+.play-board .head {
+  background: #60CBFF;
+}

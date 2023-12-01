@@ -1,10 +1,7 @@
 let css = document.querySelector(".cards.css");
 let site = document.querySelector(".cards.site");
 let ga = document.querySelector(".cards.ga");
-let getC = JSON.parse(sessionStorage.getItem("visibleCards"));
-let setC = 0;
-
-if (getC > setC) setC = getC;
+let visibleCards = sessionStorage.getItem("visibleCards") || 0;
 
 (async function () {
     let data = await fetch("./dataElements.json");
@@ -69,10 +66,7 @@ function showElem() {
         entry.forEach((change) => {
             if (change.isIntersecting) {
                 if (!change.target.classList.contains("show"))
-                    sessionStorage.setItem(
-                        "visibleCards",
-                        JSON.stringify(++setC)
-                    );
+                    sessionStorage.setItem("visibleCards", ++visibleCards);
                 change.target.classList.add("show");
             }
         });
@@ -91,9 +85,7 @@ function showElem() {
 
 function sessionStorageVisibleCards() {
     let elementsCard = document.querySelectorAll(".card");
-    let elem = getC;
-    if (elementsCard.length < getC) elem = elementsCard.length;
-    for (let i = 0; i < elem; i++) {
+    for (let i = 0; i < visibleCards; i++) {
         elementsCard[i].classList.add("show");
     }
 }

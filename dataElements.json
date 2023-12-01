@@ -178,5 +178,11 @@
     "description" : "Memory game",
     "img" : "Img/MemoryGame.png",
     "href" : "./Lib/MemoryGame/index.html"
+  },
+  {
+    "type" : "ga",
+    "description" : "Snake",
+    "img" : "Img/Snake.png",
+    "href" : "./Lib/Snake/index.html"
   }
 ]
