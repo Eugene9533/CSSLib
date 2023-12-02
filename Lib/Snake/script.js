@@ -87,7 +87,7 @@ const initGame = () => {
 };
 
 changeFoodPosition();
-setIntervalId = setInterval(initGame, 150);
+setIntervalId = setInterval(initGame, 250);
 document.addEventListener("keydown", changeDirection);
 console.log(btn);
 btn.addEventListener("click", () => {
