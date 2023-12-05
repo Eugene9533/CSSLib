@@ -1,8 +1,9 @@
-const playBoard = document.querySelector(".play-board");
+const snake = document.querySelector(".play-board.snake");
+const food = document.querySelector(".play-board.food");
 const scoreElement = document.querySelector(".score");
 const highScoreElement = document.querySelector(".high-score");
 const modal = document.querySelector(".modal");
-const btn = document.querySelector(".newGame");
+const newGame = document.querySelector(".newGame");
 
 let foodX;
 let foodY;
@@ -21,6 +22,7 @@ highScoreElement.innerText = `High Score: ${highScore}`;
 const changeFoodPosition = () => {
     foodX = Math.floor(Math.random() * 30) + 1;
     foodY = Math.floor(Math.random() * 30) + 1;
+    food.innerHTML = `<div class="food" style="grid-area: ${foodY} / ${foodX}"></div>`;
 };
 
 const handleGameOver = () => {
@@ -42,12 +44,22 @@ const changeDirection = (e) => {
         velocityX = 1;
         velocityY = 0;
     }
+
+    // if (velocityX === 0 && velocityY === -1) {
+    //     position = "up"
+    // } else if (velocityX === 0 && velocityY === 1) {
+    //     position = "down"
+    // } else if (velocityX === -1 && velocityY === 0) {
+    //     position = "left"
+    // } else if (velocityX === 1 && velocityY === 0) {
+    //     position = "right"
+    // }
 };
 
 const initGame = () => {
-    if (gameOver) return handleGameOver();
+    let htmlMarkup = ``;
 
-    let htmlMarkup = `<div class="food" style="grid-area: ${foodY} / ${foodX}"></div>`;
+    if (gameOver) return handleGameOver();
 
     if (snakeX === foodX && snakeY === foodY) {
         changeFoodPosition();
@@ -72,7 +84,6 @@ const initGame = () => {
     if (snakeX <= 0 || snakeX > 30 || snakeY <= 0 || snakeY > 30) {
         gameOver = true;
     }
-
     for (let i = 0; i < snakeBody.length; i++) {
         htmlMarkup += `<div class="head" style="grid-area: ${snakeBody[i][1]} / ${snakeBody[i][0]}"></div>`;
         if (
@@ -83,13 +94,23 @@ const initGame = () => {
             gameOver = true;
         }
     }
-    playBoard.innerHTML = htmlMarkup;
+    snake.innerHTML = htmlMarkup;
+
+    if (velocityX === 0 && velocityY === -1) {
+        document.querySelector(".head").classList = "head up";
+    } else if (velocityX === 0 && velocityY === 1) {
+        document.querySelector(".head").classList = "head down";
+    } else if (velocityX === -1 && velocityY === 0) {
+        document.querySelector(".head").classList = "head left";
+    } else if (velocityX === 1 && velocityY === 0) {
+        document.querySelector(".head").classList = "head right";
+    }
 };
 
 changeFoodPosition();
-setIntervalId = setInterval(initGame, 250);
+initGame();
+setIntervalId = setInterval(initGame, 200);
 document.addEventListener("keydown", changeDirection);
-console.log(btn);
-btn.addEventListener("click", () => {
+newGame.addEventListener("click", () => {
     location.reload();
 });

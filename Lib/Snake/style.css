@@ -33,10 +33,12 @@
 }
 
 body {
-  display: flex;
+  display: grid;
   align-items: center;
   justify-content: center;
+  align-content: center;
   min-height: 100vh;
+  overflow: hidden;
   background: #E3F2FD;
 }
 
@@ -49,13 +51,14 @@ body {
   height: 100vh;
   backdrop-filter: blur(1px);
   background: rgba(0, 0, 0, 0.534);
+  z-index: 10;
 }
 
 .modal-window {
   display: flex;
   text-align: center;
-  width: 60vmin;
-  height: 30vmin;
+  width: 400px;
+  height: 200px;
   background: #293447;
   border-radius: 5px;
   flex-direction: column;
@@ -95,8 +98,8 @@ h2 {
 }
 
 .wrapper {
-  width: 65vmin;
-  height: 70vmin;
+  width: 650px;
+  height: 720px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -111,20 +114,104 @@ h2 {
   padding: 20px 27px;
   display: flex;
   justify-content: space-between;
+  border-bottom: 1px solid #B8C6DC;
 }
 
-.play-board {
+.container-board {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background: url(./Board.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.play-board.snake {
   width: 100%;
   height: 100%;
   display: grid;
   grid-template: repeat(30, 1fr) / repeat(30, 1fr);
-  background: #212837;
+  /* background: #212837; */
+}
+
+.play-board.food {
+  position: absolute;
+  width: 650px;
+  height: 650px;
+  display: grid;
+  grid-template: repeat(30, 1fr) / repeat(30, 1fr);
+  background: transparent;
 }
 
 .play-board .food {
-  background: #FF003D;
+  background: #e40035;
+  animation: animate 1s linear infinite;
+}
+
+@keyframes animate {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.7);
+  }
 }
 
 .play-board .head {
-  background: #60CBFF;
+  display: flex;
+  justify-content: space-between;
+  background: #3ea73e;
 }
+
+.play-board .head:first-child::after {
+  content: "";
+  display: block;
+  margin: 2px;
+  width: 5px;
+  height: 5px;
+  background: #000;
+}
+
+.play-board .head:first-child::before {
+  content: "";
+  display: block;
+  margin: 2px;
+  width: 5px;
+  height: 5px;
+  background: #000;
+}
+
+.down {
+  transform: rotate(180deg);
+}
+.right {
+  transform: rotate(90deg);
+}
+.left {
+  transform: rotate(270deg);
+}
+
+
+@media only screen and (max-width: 650px) {
+  .wrapper {
+    transform: scale(0.7);
+  }
+  .modal-window {
+    transform: scale(0.7);
+  }
+}
+
+@media only screen and (max-height: 720px) {
+  .wrapper {
+    transform: scale(0.7);
+  }
+  .modal-window {
+    transform: scale(0.7);
+  }
+}
+
+/* @media only screen and (max-width: 650px) and (max-height: 650px) {
+  .wrapper {
+    transform: scale(0.8);
+  }
+} */
