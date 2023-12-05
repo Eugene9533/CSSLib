@@ -44,16 +44,6 @@ const changeDirection = (e) => {
         velocityX = 1;
         velocityY = 0;
     }
-
-    // if (velocityX === 0 && velocityY === -1) {
-    //     position = "up"
-    // } else if (velocityX === 0 && velocityY === 1) {
-    //     position = "down"
-    // } else if (velocityX === -1 && velocityY === 0) {
-    //     position = "left"
-    // } else if (velocityX === 1 && velocityY === 0) {
-    //     position = "right"
-    // }
 };
 
 const initGame = () => {

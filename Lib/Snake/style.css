@@ -209,9 +209,3 @@ h2 {
     transform: scale(0.7);
   }
 }
-
-/* @media only screen and (max-width: 650px) and (max-height: 650px) {
-  .wrapper {
-    transform: scale(0.8);
-  }
-} */
