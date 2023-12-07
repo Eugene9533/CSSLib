@@ -64,7 +64,7 @@ window.addEventListener("scroll", function () {
 
 window.onload = function () {
     setTimeout(function () {
-        if (localStorage.getItem("darkTheme") === "true") changeStyle();
+        if (localStorage.getItem("darkTheme") == "true") changeStyle();
         document.body.style = "display: block";
         window.scrollTo({
             top: +sessionStorage.getItem("scrollPosition"),
@@ -111,9 +111,9 @@ function sessionStorageVisibleCards() {
 document.querySelector(".style").addEventListener("click", () => {
     changeStyle();
     if (document.body.classList.contains("dark-theme-body")) {
-        localStorage.setItem("darkTheme", true);
+        localStorage.setItem("darkTheme", "true");
     } else {
-        localStorage.setItem("darkTheme", false);
+        localStorage.setItem("darkTheme", "false");
     }
 });
 
