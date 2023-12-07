@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: #111;
+  overflow: hidden;
+}
+
+.logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 60vw;
+  z-index: 1;
+}
+
+.lines {
+  position: absolute;
+  height: 100vh;
+  background: #c509ea;
+  mix-blend-mode: color-dodge;
+  width: 50px;
+  animation: animate 2s linear infinite;
+}
+
+@keyframes animate 
+{
+ 0%, 100%
+ {
+  opacity: 0;
+ }
+ 50%
+ {
+  opacity: 1;
+ }
+}
+
+.container {
+  filter: blur(3px);
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation menu</title>
+    <link rel="icon" href="../../src/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./MenuStyle/01/style.css">
+    <link rel="stylesheet" href="./MenuStyle/02/style.css">
+    <link rel="stylesheet" href="./MenuStyle/03/style.css">
+    <link rel="stylesheet" href="./MenuStyle/04/style.css">
+  </head>
+  <body>
+    <div class="return"></div>
+    <div class="btnL">
+      <button class="prev">&lt;</button>
+    </div>
+    <div class="btnR">
+      <button class="next">&gt;</button>
+    </div>
+    <div class="counter"></div>
+    <div class="container">
+      <div class="main">
+        <div class="bodyOne">
+          <nav>
+            <a href="#" class="active">Home</a>
+            <a href="#">Profile</a>
+            <a href="#">Messages</a>
+            <a href="#">Photos</a>
+            <a href="#">Settings</a>
+            <div id="indicator" class="change" style="left: 60px; width: 192px; display: block;"></div>
+          </nav>
+        </div>
+      </div>
+      <div class="main">
+        <div class="bodyTwo">
+          <div class="navigation">
+            <ul>
+              <li class="list active">
+                <a href="#">
+                  <span class="icon">
+                    <ion-icon name="home-outline"></ion-icon>
+                  </span>
+                  <span class="text">Home</span>
+                </a>
+              </li>
+              <li class="list">
+                <a href="#">
+                  <span class="icon">
+                    <ion-icon name="person-outline"></ion-icon>
+                  </span>
+                  <span class="text">Profile</span>
+                </a>
+              </li>
+              <li class="list">
+                <a href="#">
+                  <span class="icon">
+                    <ion-icon name="chatbox-outline"></ion-icon>
+                  </span>
+                  <span class="text">Messages</span>
+                </a>
+              </li>
+              <li class="list">
+                <a href="#">
+                  <span class="icon">
+                    <ion-icon name="image-outline"></ion-icon>
+                  </span>
+                  <span class="text">Photos</span>
+                </a>
+              </li>
+              <li class="list">
+                <a href="#">
+                  <span class="icon">
+                    <ion-icon name="settings-outline"></ion-icon>
+                  </span>
+                  <span class="text">Settings</span>
+                </a>
+              </li>
+              <div class="indicator"></div>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="main">
+        <div class="bodyThree">
+          <ul class="navigation">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Messages</a></li>
+            <li><a href="#">Photos</a></li>
+            <li><a href="#">Settings</a></li>
+            <span class="toggleMenu"></span>
+          </ul>
+        </div>
+      </div>
+      <div class="main">
+        <div class="bodyFour">
+          <nav>
+            <a href="#">Home</a>
+            <a href="#">Profile</a>
+            <a href="#">Messages</a>
+            <a href="#">Photos</a>
+            <a href="#">Settings</a>
+            <div id="marker" style="left: 0px; width: 104px;"></div>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="./MenuStyle/01/script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="./MenuStyle/02/script.js"></script>
+    <script src="./MenuStyle/03/script.js"></script>
+    <script src="./MenuStyle/04/script.js"></script>
+    <script src="../../src/elements/return_button/script.js"></script>
+  </body>
+</html>

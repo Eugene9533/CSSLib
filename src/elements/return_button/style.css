@@ -1,0 +1,31 @@
+.return_button button {
+  display: grid;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  background: #5656565e;
+  border: 0;
+  border-radius: 0 0 10px 0;
+  transition: 0.2s;
+  cursor: pointer;
+}
+  
+.return_button button svg {
+  fill: #898989;
+  transition: 0.2s;
+}
+
+.return_button button:hover{
+  top: 5px;
+  left: 5px;
+  transform: scale(1.2);
+}
+
+.return_button button:hover svg {
+  fill: #fff;
+}

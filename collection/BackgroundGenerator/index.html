@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background generator</title>
+    <link rel="icon" href="../../src/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+    <meta name="apple-mobile-web-app-title" content="CodePen">
+    <link rel="canonical" href="https://codepen.io/jhnsnc/pen/Mprdaa">
+    <script src="./dom-to-image/src/dom-to-image.js"></script>
+  </head>
+  <body>
+    <div class="return"></div>
+    <div class="main">
+      <div class="container">
+        <button onclick="generate()">Generate</button>
+        <button class="cicrleBtn" onclick="circle();generate()">Circle | Square</button>
+        <button onclick="tes()">Tesselation</button>
+        <button id="save" onclick="download()">Save</button>
+      </div>
+    </div>
+    <div class="main hidden" translate="no">
+      <div class="container">
+        <button class="tesGenerate">Generate</button>
+        <button onclick="tes();generate()">Figure</button>
+        <button id="save" onclick="download()">Save</button>
+        <svg id="demo" viewBox="0 0 1600 600" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <linearGradient id="grad1" x1="0" y1="0" x2="1" y2="0" color-interpolation="sRGB">
+              <stop id="stop1a" offset="0%" stop-color="#12a3b4"></stop>
+              <stop id="stop1b" offset="100%" stop-color="#ff509e"></stop>
+            </linearGradient>
+            <linearGradient id="grad2" x1="0" y1="0" x2="1" y2="0" color-interpolation="sRGB">
+              <stop id="stop2a" offset="0%" stop-color="#e3bc13"></stop>
+              <stop id="stop2b" offset="100%" stop-color="#00a78f"></stop>
+            </linearGradient>
+          </defs>
+          <rect id="rect1" x="0" y="0" width="1600" height="600" stroke="none" fill="url(#grad1)"></rect>
+          <rect id="rect2" x="0" y="0" width="1600" height="600" stroke="none" fill="url(#grad2)"></rect>
+        </svg>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="script.js"></script>
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stats.js/r16/Stats.min.js"></script>
+    <script src="tesselation.js"></script>
+    <script src="../../src/elements/return_button/script.js"></script>
+  </body>
+</html>

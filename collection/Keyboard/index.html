@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en visVisible">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Keyboard</title>
+        <link rel="icon" href="../../src/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body onclick="event.preventDefault()" oncontextmenu="return false;">
+        <div class="return"></div>
+        <div class="keyboard">
+            <div class="input">
+                <textarea cols="30" rows="10" autofocus="autofocus"></textarea>
+            </div>
+            <div class="buttons">
+                <div class="row">
+                    <button class="btn" id="Backquote">
+                        <span class="en visVisible"><span>~</span><span>`</span></span> <span class="ru visHidden"
+                            visHidden>Ё</span>
+                    </button>
+                    <button class="btn" id="Digit1">
+                        <span class="alwaysen">!</span> <span class="alwaysru">1</span>
+                    </button>
+                    <button class="btn" id="Digit2">
+                        <span class="en visVisible">@</span><span class="num"><span>2</span><span
+                                class="enNum visHidden">"</span></span>
+                    </button>
+                    <button class="btn" id="Digit3">
+                        <span class="en visVisible">#</span><span class="num"><span>3</span><span
+                                class="enNum visHidden">№</span></span>
+                    </button>
+                    <button class="btn" id="Digit4">
+                        <span class="en visVisible">$</span><span class="num"><span>4</span><span
+                                class="enNum visHidden">;</span></span>
+                    </button>
+                    <button class="btn" id="Digit5">
+                        <span class="alwaysen">%</span> <span class="alwaysru">5</span>
+                    </button>
+                    <button class="btn" id="Digit6">
+                        <span class="en visVisible">^</span><span class="num"><span>6</span><span
+                                class="enNum visHidden">:</span></span>
+                    </button>
+                    <button class="btn" id="Digit7">
+                        <span class="en visVisible">&</span><span class="num"><span>7</span><span
+                                class="enNum visHidden">?</span></span>
+                    </button>
+                    <button class="btn" id="Digit8">
+                        <span class="alwaysen">*</span> <span class="alwaysru">8</span>
+                    </button>
+                    <button class="btn" id="Digit9">
+                        <span class="alwaysen">(</span> <span class="alwaysru">9</span>
+                    </button>
+                    <button class="btn" id="Digit0">
+                        <span class="alwaysen">)</span> <span class="alwaysru">0</span>
+                    </button>
+                    <button class="btn" id="Minus">
+                        <span class="en visVisible">_</span> <span class="ru visHidden" visHidden>-</span>
+                    </button>
+                    <button class="btn" id="Equal">
+                        <span class="en visVisible">+</span> <span class="ru visHidden" visHidden>=</span>
+                    </button>
+                    <button class="btn backspace" id="Backspace">Backspace </button>
+                </div>
+                <div class="row">
+                    <button class="btn tab" id="Tab">Tab </button>
+                    <button class="btn" id="KeyQ">
+                        <span class="en visVisible">Q</span> <span class="ru visHidden" visHidden>Й</span>
+                    </button>
+                    <button class="btn" id="KeyW">
+                        <span class="en visVisible">W</span> <span class="ru visHidden" visHidden>Ц</span>
+                    </button>
+                    <button class="btn" id="KeyE">
+                        <span class="en visVisible">E</span> <span class="ru visHidden" visHidden>У</span>
+                    </button>
+                    <button class="btn" id="KeyR">
+                        <span class="en visVisible">R</span> <span class="ru visHidden" visHidden>К</span>
+                    </button>
+                    <button class="btn" id="KeyT">
+                        <span class="en visVisible">T</span> <span class="ru visHidden" visHidden>Е</span>
+                    </button>
+                    <button class="btn" id="KeyY">
+                        <span class="en visVisible">Y</span> <span class="ru visHidden" visHidden>Н</span>
+                    </button>
+                    <button class="btn" id="KeyU">
+                        <span class="en visVisible">U</span> <span class="ru visHidden" visHidden>Г</span>
+                    </button>
+                    <button class="btn" id="KeyI">
+                        <span class="en visVisible">I</span> <span class="ru visHidden" visHidden>Ш</span>
+                    </button>
+                    <button class="btn" id="KeyO">
+                        <span class="en visVisible">O</span> <span class="ru visHidden" visHidden>Щ</span>
+                    </button>
+                    <button class="btn" id="KeyP">
+                        <span class="en visVisible">P</span> <span class="ru visHidden" visHidden>З</span>
+                    </button>
+                    <button class="btn" id="BracketLeft">
+                        <span class="en visVisible"><span>{</span><span>[</span></span> <span class="ru visHidden"
+                            visHidden>Х</span>
+                    </button>
+                    <button class="btn" id="BracketRight">
+                        <span class="en visVisible"><span>}</span><span>]</span></span> <span class="ru visHidden"
+                            visHidden>Ъ</span>
+                    </button>
+                    <button class="btn slash" id="Backslash">
+                        <span class="en visVisible"><span>|</span><span>\</span></span> <span class="ru visHidden"
+                            visHidden><span>\</span><span>/</span></span>
+                    </button>
+                </div>
+                <div class="row">
+                    <button class="btn caps" id="CapsLock">
+                        <span>CapsLock</span>
+                    </button>
+                    <button class="btn" id="KeyA">
+                        <span class="en visVisible">A</span> <span class="ru visHidden" visHidden>Ф</span>
+                    </button>
+                    <button class="btn" id="KeyS">
+                        <span class="en visVisible">S</span> <span class="ru visHidden" visHidden>Ы</span>
+                    </button>
+                    <button class="btn" id="KeyD">
+                        <span class="en visVisible">D</span> <span class="ru visHidden" visHidden>В</span>
+                    </button>
+                    <button class="btn" id="KeyF">
+                        <span class="en visVisible">F</span> <span class="ru visHidden" visHidden>А</span>
+                    </button>
+                    <button class="btn" id="KeyG">
+                        <span class="en visVisible">G</span> <span class="ru visHidden" visHidden>П</span>
+                    </button>
+                    <button class="btn" id="KeyH">
+                        <span class="en visVisible">H</span> <span class="ru visHidden" visHidden>Р</span>
+                    </button>
+                    <button class="btn" id="KeyJ">
+                        <span class="en visVisible">J</span> <span class="ru visHidden" visHidden>О</span>
+                    </button>
+                    <button class="btn" id="KeyK">
+                        <span class="en visVisible">K</span> <span class="ru visHidden" visHidden>Л</span>
+                    </button>
+                    <button class="btn" id="KeyL">
+                        <span class="en visVisible">L</span> <span class="ru visHidden" visHidden>Д</span>
+                    </button>
+                    <button class="btn" id="Semicolon">
+                        <span class="en visVisible"><span>:</span><span>;</span></span> <span class="ru visHidden"
+                            visHidden>Ж</span>
+                    </button>
+                    <button class="btn" id="Quote">
+                        <span class="en visVisible"><span>"</span><span>'</span></span> <span class="ru visHidden"
+                            visHidden>Э</span>
+                    </button>
+                    <button class="btn enter" id="Enter">Enter </button>
+                </div>
+                <div class="row">
+                    <button class="btn shift" id="ShiftLeft">
+                        <span>Shift</span>
+                    </button>
+                    <button class="btn" id="KeyZ">
+                        <span class="en visVisible">Z</span> <span class="ru visHidden" visHidden>Я</span>
+                    </button>
+                    <button class="btn" id="KeyX">
+                        <span class="en visVisible">X</span> <span class="ru visHidden" visHidden>Ч</span>
+                    </button>
+                    <button class="btn" id="KeyC">
+                        <span class="en visVisible">C</span> <span class="ru visHidden" visHidden>С</span>
+                    </button>
+                    <button class="btn" id="KeyV">
+                        <span class="en visVisible">V</span> <span class="ru visHidden" visHidden>М</span>
+                    </button>
+                    <button class="btn" id="KeyB">
+                        <span class="en visVisible">B</span> <span class="ru visHidden" visHidden>И</span>
+                    </button>
+                    <button class="btn" id="KeyN">
+                        <span class="en visVisible">N</span> <span class="ru visHidden" visHidden>Т</span>
+                    </button>
+                    <button class="btn" id="KeyM">
+                        <span class="en visVisible">M</span> <span class="ru visHidden" visHidden>Ь</span>
+                    </button>
+                    <button class="btn" id="Comma">
+                        <span class="en visVisible">&lt;</span> <span class="ru visHidden" visHidden>Б</span>
+                    </button>
+                    <button class="btn" id="Period">
+                        <span class="en visVisible"><span>&gt;</span><span>.</span></span> <span class="ru visHidden"
+                            visHidden>Ю</span>
+                    </button>
+                    <button class="btn" id="Slash">
+                        <span class="en visVisible"><span>?</span><span>/</span></span> <span class="ru visHidden"
+                            visHidden><span>.</span><span>,</span></span>
+                    </button>
+                    <button class="btn shift shiftR" id="ShiftRight">
+                        <span>Shift</span>
+                    </button>
+                </div>
+                <div class="row">
+                    <button class="btn ctrl" id="ControlLeft">
+                        <span>Ctrl</span>
+                    </button>
+                    <button class="btn alt" id="AltLeft">
+                        <span>Alt</span>
+                    </button>
+                    <button class="btn space" id="Space">
+                        <span> </span>
+                    </button>
+                    <button class="btn alt" id="AltRight">
+                        <span>Alt</span>
+                    </button>
+                    <button class="btn ctrl" id="ControlRight">
+                        <span>Ctrl</span>
+                    </button>
+                    <button class="btn left" id="ArrowLeft">&#11164;
+                    </button>
+                    <button class="btn right" id="ArrowRight">&#11166;
+                    </button>
+                    <button class="btn del" id="Delete">Del </button>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+        <script src="../../src/elements/return_button/script.js"></script>
+    </body>
+</html>
