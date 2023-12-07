@@ -1,54 +1,84 @@
-const emojis = [
-  "&#128512",
-  "&#128512",
-  "&#128514",
-  "&#128514",
-  "&#128525",
-  "&#128525",
-  "&#128540",
-  "&#128540",
-  "&#129397",
-  "&#129397",
-  "&#128128",
-  "&#128128",
-  "&#128152",
-  "&#128152",
-  "&#128077",
-  "&#128077",
-];
-let shuf_emojis = emojis.sort(() => (Math.random() > 0.5 ? 2 : -1));
-for (let i = 0; i < emojis.length; i++) {
-  let box = document.createElement("div");
-  box.className = "item";
-  box.innerHTML = shuf_emojis[i];
+const cardsElement = document.querySelector(".cards");
 
-  box.onclick = function () {
-    this.classList.add("boxOpen");
-    setTimeout(function () {
-      if (document.querySelectorAll(".boxOpen").length > 1) {
-        if (
-          document.querySelectorAll(".boxOpen")[0].innerHTML ==
-          document.querySelectorAll(".boxOpen")[1].innerHTML
-        ) {
-          document.querySelectorAll(".boxOpen")[0].classList.add("boxMatch");
-          document.querySelectorAll(".boxOpen")[1].classList.add("boxMatch");
-          document.querySelectorAll(".boxOpen")[1].classList.remove("boxOpen");
-          document.querySelectorAll(".boxOpen")[0].classList.remove("boxOpen");
-          if (document.querySelectorAll(".boxMatch").length == emojis.length) {
-            document.querySelector(".modal").classList.remove("hidden");
-          }
-        } else {
-          document.querySelectorAll(".boxOpen")[1].classList.remove("boxOpen");
-          document.querySelectorAll(".boxOpen")[0].classList.remove("boxOpen");
-        }
-      }
-    }, 500);
-  };
-
-  document.querySelector(".game").appendChild(box);
+for (let j = 0; j <= 1; j++) {
+    for (let i = 1; i <= 8; i++) {
+        cardsElement.innerHTML += `<li class="card">
+      <div class="view front-view">
+        
+      </div>
+      <div class="view back-view">
+        <img src="images/img-${i}.png" alt="card-img">
+      </div>
+    </li>`;
+    }
 }
 
-document.querySelector(".reset").onclick = function () {
-  window.location.reload();
-  document.querySelector(".modal").classList.add("hidden");
-};
+const cards = document.querySelectorAll(".card");
+
+let matchedCard = 0;
+let cardOne, cardTwo;
+let disableDeck = false;
+
+function flipCard(e) {
+    let clickedCard = e.target;
+    if (clickedCard !== cardOne && !disableDeck) {
+        clickedCard.classList.add("flip");
+        if (!cardOne) {
+            return (cardOne = clickedCard);
+        }
+        cardTwo = clickedCard;
+        disableDeck = true;
+
+        let cardOneImg = cardOne.querySelector("img").src;
+        let cardTwoImg = cardTwo.querySelector("img").src;
+        matchCards(cardOneImg, cardTwoImg);
+    }
+}
+
+function matchCards(img1, img2) {
+    if (img1 === img2) {
+        matchedCard++;
+        if (matchedCard == 8) {
+            setTimeout(() => {
+                return shuffleCard();
+            }, 1000);
+        }
+        cardOne.removeEventListener("click", flipCard);
+        cardTwo.removeEventListener("click", flipCard);
+        cardOne = cardTwo = "";
+        return (disableDeck = false);
+    }
+    setTimeout(() => {
+        cardOne.classList.add("shake");
+        cardTwo.classList.add("shake");
+    }, 400);
+
+    setTimeout(() => {
+        cardOne.classList.remove("shake", "flip");
+        cardTwo.classList.remove("shake", "flip");
+        cardOne = cardTwo = "";
+        disableDeck = false;
+    }, 1200);
+}
+
+function shuffleCard() {
+    matchedCard = 0;
+    cardOne = cardTwo = "";
+    disableDeck = false;
+
+    let arr = [1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8];
+    arr.sort(() => (Math.random() > 0.5 ? 1 : -1));
+
+    cards.forEach((card, index) => {
+        card.classList.remove("flip");
+        let imgTag = card.querySelector("img");
+        imgTag.src = `images/img-${arr[index]}.png`;
+        card.addEventListener("click", flipCard);
+    });
+}
+
+shuffleCard();
+
+cards.forEach((card) => {
+    card.addEventListener("click", flipCard);
+});

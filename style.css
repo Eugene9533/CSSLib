@@ -31,6 +31,7 @@ body {
   background: #f5f5f5;
   overflow-x: hidden;
   width: calc(100% + 15px);
+  display: none;
 }
 
 h1, h2, p {
@@ -45,6 +46,29 @@ h1, h2 {
   font-size: 3rem;
   color:#333333;
   text-shadow: 2px 2px 3px #585858;
+}
+
+.style {
+  display: flex;
+  position: sticky;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  z-index: 10;
+  left: calc(100vw - 85px);
+  top: 20px;
+}
+
+.style {
+  transition: 0.3s;
+}
+
+.active {
+  display: none;
+}
+
+.style:hover {
+  transform: scale(1.2);
 }
 
 .main {
@@ -130,7 +154,7 @@ footer {
   width: 100%;
   height: 100px;
   background: #363636;
-  color: #fff;
+  color: #f5f5f5;
 }
 
 footer .contact {
@@ -163,7 +187,7 @@ footer a i {
   z-index: 2;
   text-decoration: none;
   font-size: 40px;
-  color: #fff;
+  color: #f5f5f5;
   transition: 0.5s;
 }
 
@@ -190,6 +214,44 @@ footer a:hover .fa-square-instagram {
   -webkit-text-fill-color: transparent;
 }
 
+
+.dark-theme-body {
+  background: #0a0a0a;
+}
+
+.dark-theme-description {
+  background: #343434b6;
+}
+
+.dark-theme-text {
+  color: #c9c9c9;
+}
+
+.container.dark-theme-container:hover {
+  box-shadow: 0px 5px 20px 0px rgba(255, 255, 255, 0.5);
+}
+
+.container.dark-theme-container:hover .text {
+  color: #fff;
+}
+
+.dark-theme-h1, .dark-theme-h2 {
+  color: #cccccc;
+  text-shadow: 2px 2px 3px #a7a7a7;
+}
+
+.dark-theme-line {
+  background: #c9c9c9;
+}
+
+.dark-theme-footer {
+  background: #c9c9c9;
+  color: #000;
+}
+
+i.dark-theme-i {
+  color: #000;
+}
 
 @media only screen and (max-width: 1430px) and (min-width: 1090px) {
   .cards {

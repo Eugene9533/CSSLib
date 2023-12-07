@@ -169,8 +169,8 @@
   },
   {
     "type" : "site",
-    "description" : "Paint",
-    "img" : "Img/Paint.png",
+    "description" : "Paint online",
+    "img" : "Img/PaintOnline.png",
     "href" : "https://paint-sable.vercel.app/"
   },
   {
@@ -190,5 +190,11 @@
     "description" : "Tic Tac Toe",
     "img" : "Img/TicTacToe.png",
     "href" : "./Lib/TicTacToe/index.html"
+  },
+  {
+    "type" : "ga",
+    "description" : "Paint",
+    "img" : "Img/Paint.png",
+    "href" : "./Lib/Paint/index.html"
   }
 ]
