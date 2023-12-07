@@ -184,5 +184,11 @@
     "description" : "Snake",
     "img" : "Img/Snake.png",
     "href" : "./Lib/Snake/index.html"
+  },
+  {
+    "type" : "ga",
+    "description" : "Tic Tac Toe",
+    "img" : "Img/TicTacToe.png",
+    "href" : "./Lib/TicTacToe/index.html"
   }
 ]

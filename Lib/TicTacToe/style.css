@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+.back {
+  display: grid;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  background: #5656565e;
+  border: 0;
+  border-radius: 0 0 10px 0;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.back svg {
+  fill: #ffffff;
+}
+
+.back:hover{
+  transform: scale(1.2);
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #56baed;
+}
+
+.select-box, .play-board, .result-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+}
+
+.select-box {
+  background: #fff;
+  padding: 20px 25px 25px;
+  border-radius: 5px;
+  width: 33%;
+}
+
+.select-box.hide {
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0.9);
+}
+
+.select-box .options {
+  display: flex;
+  width: 100%;
+}
+
+.playerO, .playerX {
+  width: 280px;
+  height: 280px;
+}
+
+.playerO svg, .playerX svg{
+  width: 150px;
+  height: 150px;
+}
+
+.options button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-size: 180px;
+  font-weight: 500;
+  padding: 8px 0;
+  border: none;
+  outline: none;
+  background: #56baed;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.options button circle, .options button line {
+  stroke-linecap: round;
+  stroke: #fff;
+  fill: none;
+  stroke-width: 20px;
+}
+
+.options button:hover, .result-box .btn button:hover {
+  transform: scale(0.95);
+  background: #4ca5d1;
+}
+
+.options button:active, .result-box .btn button:active {
+  background: #438fb6;
+}
+
+.options button.playerX {
+  margin-right: 5px;
+}
+
+.options button.playerO {
+  margin-left: 5px;
+}
+
+.play-board {
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0.9);
+}
+
+.play-board.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.play-board .details {
+  background: #fff;
+  padding: 7px;
+  border-radius: 5px;
+}
+
+.play-board .details .players {
+  display: flex;
+  width: 100%;
+  position: relative;
+  justify-content: space-between;
+}
+
+.play-board .details span {
+  color: #56baed;
+  width: 100%;
+  border-radius: 5px;
+  padding: 7px 0;
+  font-size: 19px;
+  font-weight: 500;
+  cursor: default;
+  text-align: center;
+  position: relative;
+  z-index: 5;
+  transition: all 0.3s ease;
+}
+
+.details span:first-child {
+  color: #fff;
+}
+
+.details span.active {
+  color: #fff;
+}
+
+.details .slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50%;
+  background: #56baed;
+  border-radius: 5px;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.players.active span:first-child {
+  color: #56baed;
+}
+
+.players.active span:nth-child(2) {
+  color: #fff;
+}
+
+.players.active .slider {
+  left: 50%;
+}
+
+.play-board .play-area {
+  margin-top: 20px;
+}
+
+.play-board section {
+  display: flex;
+}
+
+.play-board section span {
+  display: flex;
+  justify-content: center;
+    align-items: center;
+  margin: 2px;
+  height: 100px;
+  width: 100px;
+  background: #fff;
+  border-radius: 5px;
+  font-size:  40px;
+  text-align: center;
+  line-height: 80px;
+  color: #56baed;
+}
+
+.result-box {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 350px;
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0.9);
+}
+  
+.result-box.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+
+.result-box .won-text {
+  font-size: 25px;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+}
+
+.result-box .won-text p {
+  font-weight: 600;
+  margin: 0 5px;
+}
+
+.result-box .btn {
+  display: flex;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.result-box .btn button {
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 20px;
+  border: none;
+  outline: none;
+  background: #56baed;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.circle {
+  width: 80px;
+  height: 80px;
+  transform: rotate(-90deg);
+}
+
+.c {
+  stroke-dasharray:500;
+  stroke-dashoffset:500;
+  stroke-linecap: round;
+  stroke: #56baed;
+  fill: none;
+  stroke-width: 10px;
+  animation: draw .7s linear forwards;
+}
+
+@keyframes draw {
+  100% {
+  stroke-dashoffset:0;
+  }
+}
+
+.cross {
+  width: 80px;
+  height: 80px;
+}
+
+.l_1, .l_2 {
+  stroke-dasharray:500;
+  stroke-dashoffset:500;
+  stroke-linecap: round;
+  stroke: #56baed;
+  stroke-width: 10px;
+  animation: draw .5s linear forwards;
+}
+
+.l_2 {
+  animation-delay: .2s;
+}
