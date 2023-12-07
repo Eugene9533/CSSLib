@@ -110,18 +110,14 @@ function sessionStorageVisibleCards() {
 
 document.querySelector(".style").addEventListener("click", () => {
     changeStyle();
+    if (document.body.classList.contains("dark-theme-body")) {
+        localStorage.setItem("darkTheme", true);
+    } else {
+        localStorage.setItem("darkTheme", false);
+    }
 });
 
 function changeStyle() {
-    if (
-        localStorage.getItem("darkTheme") === "true" &&
-        document.body.classList.contains("dark-theme-body")
-    ) {
-        localStorage.setItem("darkTheme", false);
-    } else {
-        localStorage.setItem("darkTheme", true);
-    }
-
     const dark = document.querySelector(".dark");
     const light = document.querySelector(".light");
     const container = document.querySelectorAll(".container");
