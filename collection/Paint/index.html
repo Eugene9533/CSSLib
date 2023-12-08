@@ -9,6 +9,78 @@
   </head>
   <body>
     <div class="return"></div>
+    <div class="container">
+      <section class="tools-board">
+        <div class="row">
+          <ul class="options">
+            <li class="option tool" id="rectangle">
+              <img src="./icons/rectangle.svg" alt="rectangle">
+              <span>Rectangle</span>
+            </li>
+            <li class="option tool" id="circle">
+              <img src="./icons/circle.svg" alt="circle">
+              <span>Circle</span>
+            </li>
+            <li class="option tool" id="triangle">
+              <img src="./icons/triangle.svg" alt="triangle">
+              <span>Triangle</span>
+            </li>
+            <li class="option tool" id="line">
+              <img src="./icons/line.svg" alt="line">
+              <span>Line</span>
+            </li>
+            <li class="option">
+              <input type="checkbox" id="fill-color">
+              <label for="fill-color">Fill color</label>
+            </li>
+          </ul>
+        </div>
+        <div class="row">
+          <label class="title"></label>
+          <ul class="options">
+            <li class="option active tool" id="brush">
+              <img src="./icons/brush.svg" alt="brush">
+              <span>Brush</span>
+            </li>
+            <li class="option tool" id="eraser">
+              <img src="./icons/eraser.svg" alt="eraser">
+              <span>Eraser</span>
+            </li>
+            <li class="option">
+              <input type="range" id="size-slider" min="1" max="30" value="5">
+            </li>
+          </ul>
+        </div>
+        <div class="row colors">
+          <label class="title"></label>
+          <ul class="options">
+            <li class="option">
+              <input type="color" id="color-picker" value="#ffffff">
+            </li>
+            <li class="option selected">
+              <input type="color" id="color-picker" value="#000000">
+            </li>
+            <li class="option">
+              <input type="color" id="color-picker" value="#E02020">
+            </li>
+            <li class="option">
+              <input type="color" id="color-picker" value="#6DD400">
+            </li>
+            <li class="option">
+              <input type="color" id="color-picker" value="#4A98F7">
+            </li>
+          </ul>
+        </div>
+        <div class="row buttons">
+          <label class="title"></label>
+          <button class="clear-canvas">Clear board</button>
+          <button class="save-img">Save as image</button>
+        </div>
+      </section>
+      <section class="drawing-board">
+        <canvas></canvas>
+      </section>
+    </div>
     <script src="script.js"></script>
     <script src="../../src/elements/return_button/script.js"></script>
   </body>
