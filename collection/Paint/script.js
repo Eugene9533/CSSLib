@@ -7,12 +7,17 @@ const colorBtns = document.querySelectorAll(".colors .option");
 const colorPicker = document.querySelectorAll("#color-picker");
 const clearCanvas = document.querySelector(".clear-canvas");
 const saveImg = document.querySelector(".save-img");
+const undo = document.querySelector(".undo");
+const redo = document.querySelector(".redo");
 
 let prevMouseX, prevMouseY, snapshot;
 let isDrawing = false;
 let selectedTool = "brush";
 let brushWidth = 5;
 let selectedColor = "#000";
+let restoreArray = [];
+let restoreArrayRedo = [];
+let index = -1;
 
 const setCanvasBackground = () => {
     ctx.fillStyle = "#fff";
@@ -130,6 +135,9 @@ colorPicker.forEach((e) => {
 clearCanvas.addEventListener("click", () => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     setCanvasBackground();
+    restoreArray = [];
+    restoreArrayRedo = [];
+    index = -1;
 });
 
 saveImg.addEventListener("click", () => {
@@ -141,4 +149,39 @@ saveImg.addEventListener("click", () => {
 
 canvas.addEventListener("mousedown", startDraw);
 canvas.addEventListener("mousemove", drawing);
-canvas.addEventListener("mouseup", () => (isDrawing = false));
+canvas.addEventListener("mouseup", () => {
+    isDrawing = false;
+    restoreArray.push(ctx.getImageData(0, 0, canvas.width, canvas.height));
+    index++;
+    restoreArrayRedo = [];
+    undo.classList.add("unlock");
+    redo.classList.remove("unlock");
+});
+
+undo.addEventListener("click", () => {
+    if (index <= 0) {
+        if (restoreArray.length != 0) restoreArrayRedo.push(restoreArray.pop());
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        setCanvasBackground();
+        restoreArray = [];
+        index = -1;
+        undo.classList.remove("unlock");
+    } else {
+        index -= 1;
+        restoreArrayRedo.push(restoreArray.pop());
+        ctx.putImageData(restoreArray[index], 0, 0);
+        redo.classList.add("unlock");
+    }
+});
+
+redo.addEventListener("click", () => {
+    if (restoreArrayRedo.length != 0) {
+        index++;
+        ctx.putImageData(restoreArrayRedo[restoreArrayRedo.length - 1], 0, 0);
+        restoreArray.push(restoreArrayRedo.pop());
+        undo.classList.add("unlock");
+    }
+    if (restoreArrayRedo.length == 0) {
+        redo.classList.remove("unlock");
+    }
+});

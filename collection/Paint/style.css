@@ -133,6 +133,45 @@ section {
   cursor: pointer;
 }
 
+.undo-redo {
+  margin: 0  0 5px 0 !important;
+}
+
+.undo-redo .options {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0 0 0;
+}
+
+.undo-redo button {
+  background: #ffffff;
+  border: 1px solid #6C757D;
+  border-radius: 5px;
+  height: 25px;
+  width: 77px;
+  transition: all 0.3s ease;
+}
+
+.undo:hover img, .redo:hover img {
+  filter: none;
+}
+
+.undo.unlock, .redo.unlock {
+  cursor: pointer;
+}
+
+.undo.unlock img, .redo.unlock img {
+  filter: invert(17%) sepia(90%) saturate(3000%) hue-rotate(900deg) brightness(100%) contrast(100%);
+}
+
+.undo.unlock:hover, .redo.unlock:hover {
+  background: #6C757D;
+}
+
+.undo.unlock:hover img, .redo.unlock:hover img {
+  filter: brightness(1000%);
+}
+
 .buttons button {
   width: 100%;
   color: #fff;
