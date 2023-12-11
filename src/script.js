@@ -6,7 +6,7 @@ let visibleCards = sessionStorage.getItem("visibleCards") || 0;
 // Creating dom elements
 
 (async function () {
-    let data = await fetch("./dataElements.json");
+    let data = await fetch("./src/dataElements.json");
     let parseData = await data.json();
 
     // Creating elements by type
