@@ -138,6 +138,8 @@ clearCanvas.addEventListener("click", () => {
     restoreArray = [];
     restoreArrayRedo = [];
     index = -1;
+    redo.classList.remove("unlock");
+    undo.classList.remove("unlock");
 });
 
 saveImg.addEventListener("click", () => {
@@ -170,8 +172,8 @@ undo.addEventListener("click", () => {
         index -= 1;
         restoreArrayRedo.push(restoreArray.pop());
         ctx.putImageData(restoreArray[index], 0, 0);
-        redo.classList.add("unlock");
     }
+    if (restoreArrayRedo.length != 0) redo.classList.add("unlock");
 });
 
 redo.addEventListener("click", () => {
