@@ -196,5 +196,11 @@
     "description" : "Paint",
     "img" : "./src/media/image/Paint.png",
     "href" : "./collection/Paint/index.html"
+  },
+  {
+    "type" : "css",
+    "description" : "Shadow",
+    "img" : "./src/media/image/Shadow.png",
+    "href" : "./collection/Shadow/index.html"
   }
 ]
