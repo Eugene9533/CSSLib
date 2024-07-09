@@ -202,5 +202,17 @@
     "description" : "Shadow",
     "img" : "./src/media/image/Shadow.png",
     "href" : "./collection/Shadow/index.html"
+  },
+  {
+    "type" : "css",
+    "description" : "Dripping liquid",
+    "img" : "./src/media/image/DrippingLiquid.png",
+    "href" : "./collection/DrippingLiquid/index.html"
+  },
+  {
+    "type" : "css",
+    "description" : "Image slider",
+    "img" : "./src/media/image/ImageSlider.png",
+    "href" : "./collection/ImageSlider/index.html"
   }
 ]
