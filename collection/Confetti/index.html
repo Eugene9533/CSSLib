@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confetti</title>
+    <link rel="icon" href="../../src/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="return"></div>
+    <div class="container">
+      <input class="num" type="range" min="100" max="1100" value="600" step="100" oninput="numConfetti(this.value)">
+      <canvas id="world"></canvas>
+    </div>
+    <script src="script.js"></script>
+    <script src="../../src/elements/return_button/script.js"></script>
+  </body>
+</html>

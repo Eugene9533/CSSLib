@@ -214,5 +214,11 @@
     "description" : "Image slider",
     "img" : "./src/media/image/ImageSlider.png",
     "href" : "./collection/ImageSlider/index.html"
+  },
+  {
+    "type" : "css",
+    "description" : "Confetti",
+    "img" : "./src/media/image/Confetti.png",
+    "href" : "./collection/Confetti/index.html"
   }
 ]
