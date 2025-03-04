@@ -220,5 +220,11 @@
     "description" : "Confetti",
     "img" : "./src/media/image/Confetti.png",
     "href" : "./collection/Confetti/index.html"
+  },
+  {
+    "type" : "css",
+    "description" : "Particles",
+    "img" : "./src/media/image/Particles.png",
+    "href" : "./collection/Particles/index.html"
   }
 ]
