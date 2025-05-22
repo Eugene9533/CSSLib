@@ -232,5 +232,11 @@
     "description" : "Password generator",
     "img" : "./src/media/image/PasswordGenerator.png",
     "href" : "./collection/PasswordGenerator/index.html"
+  },
+  {
+    "type" : "css",
+    "description" : "Parallax cursor",
+    "img" : "./src/media/image/ParallaxCursor.png",
+    "href" : "./collection/ParallaxCursor/index.html"
   }
 ]
