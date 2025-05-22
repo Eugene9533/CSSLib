@@ -1,7 +1,7 @@
-let css = document.querySelector(".cards.css");
-let site = document.querySelector(".cards.site");
-let ga = document.querySelector(".cards.ga");
-let visibleCards = sessionStorage.getItem("visibleCards") || 0;
+const css = document.querySelector(".cards.css");
+const site = document.querySelector(".cards.site");
+const ga = document.querySelector(".cards.ga");
+const visibleCards = sessionStorage.getItem("visibleCards") || 0;
 
 // Creating dom elements
 
@@ -53,10 +53,7 @@ let visibleCards = sessionStorage.getItem("visibleCards") || 0;
 
 window.addEventListener("scroll", function () {
     window.requestAnimationFrame(function () {
-        sessionStorage.setItem(
-            "scrollPosition",
-            document.documentElement.scrollTop
-        );
+        sessionStorage.setItem("scrollPosition", document.documentElement.scrollTop);
     });
 });
 
@@ -79,8 +76,7 @@ function showElem() {
     function onEntry(entry) {
         entry.forEach((change) => {
             if (change.isIntersecting) {
-                if (!change.target.classList.contains("show"))
-                    sessionStorage.setItem("visibleCards", ++visibleCards);
+                if (!change.target.classList.contains("show")) sessionStorage.setItem("visibleCards", ++visibleCards);
                 change.target.classList.add("show");
             }
         });

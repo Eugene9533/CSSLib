@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="icon" href="../../src/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded"/>
+</head>
+<body>
+    <div class="return"></div>
+    <div class="container">
+        <h1>Password Generator</h1>
+        <div class="wrapper">
+            <div class="input-box">
+                <input type="text" disabled>
+                <span class="material-symbols-rounded">copy_all</span>
+            </div>
+            <div class="pass-indicator weak"></div>
+            <div class="pass-length">
+                <div class="details">
+                    <label for="">Password Length</label>
+                    <span>16</span>
+                </div>
+                <input type="range" min="2" max="32" value="16" step="2">
+            </div>
+            <div class="pass-settings">
+                <label for="">Pass Settings</label>
+                <ul class="options">
+                    <li class="option">
+                        <input type="checkbox" id="lowercase" checked readonly disabled>
+                        <label for="lowercase">lowercase (a-z)</label>
+                    </li>
+                    <li class="option">
+                        <input type="checkbox" id="uppercase">
+                        <label for="uppercase">uppercase (A-Z)</label>
+                    </li>
+                    <li class="option">
+                        <input type="checkbox" id="numbers">
+                        <label for="numbers">numbers (0-9)</label>
+                    </li>
+                    <li class="option">
+                        <input type="checkbox" id="symbols">
+                        <label for="symbols">symbols (!@#$)</label>
+                    </li>
+                </ul>
+            </div>
+            <button class="generate-btn">Generate password</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="../../src/elements/return_button/script.js"></script>
+</body>
+</html>

@@ -226,5 +226,11 @@
     "description" : "Particles",
     "img" : "./src/media/image/Particles.png",
     "href" : "./collection/Particles/index.html"
+  },
+  {
+    "type" : "ga",
+    "description" : "Password generator",
+    "img" : "./src/media/image/PasswordGenerator.png",
+    "href" : "./collection/PasswordGenerator/index.html"
   }
 ]
