@@ -232,5 +232,11 @@
     "description" : "Password generator",
     "img" : "./src/media/image/PasswordGenerator.png",
     "href" : "./collection/PasswordGenerator/index.html"
+  },
+  {
+    "type" : "css",
+    "description" : "Accordion",
+    "img" : "./src/media/image/Accordion.png",
+    "href" : "./collection/Accordion/index.html"
   }
 ]

@@ -1,0 +1,49 @@
+
+:root {
+    --option-height: 400px;
+    --option-width: 60px;
+    --radius: 1.875rem;
+    --gutter: 10px;
+}
+
+.bodyTwelve {
+    background: #1F2020;
+    min-width: 320px;
+    width: 100%;
+}
+
+.bodyTwelve .containerTwelve {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.bodyTwelve .options {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    min-width: 480px;
+    max-width: calc(var(--total-options)*130px);
+    height: var(--option-height);
+    width: 100%;
+}
+
+.bodyTwelve .option {
+    background-color: #000;
+    margin: var(--gutter);
+    flex-grow: 1;
+    border-radius: var(--radius);
+    flex: 0 0 var(--option-width);
+    transition: flex-grow 1.25s cubic-bezier(.17, .84, .44, 1);
+    background-position: center;
+    background-size: cover;
+}
+
+.bodyTwelve .option:not(.active) {
+    cursor: pointer;
+}
+
+.bodyTwelve .option.active {
+    flex-grow: var(--total-options);
+}
