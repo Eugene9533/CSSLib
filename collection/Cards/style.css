@@ -22,11 +22,11 @@ body {
 }
 
 .prev {
-  border-radius: 0 10% 10% 0;
+  border-radius: 0 10px 10px 0;
 }
 
 .next {
-  border-radius: 10% 0 0 10%;
+  border-radius: 10px 0 0 10px;
 }
 
 .prev:hover, .next:hover {
