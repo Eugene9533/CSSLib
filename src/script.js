@@ -1,7 +1,7 @@
-const css = document.querySelector(".cards.css");
-const site = document.querySelector(".cards.site");
-const ga = document.querySelector(".cards.ga");
-const visibleCards = sessionStorage.getItem("visibleCards") || 0;
+let css = document.querySelector(".cards.css");
+let site = document.querySelector(".cards.site");
+let ga = document.querySelector(".cards.ga");
+let visibleCards = sessionStorage.getItem("visibleCards") || 0;
 
 // Creating dom elements
 
