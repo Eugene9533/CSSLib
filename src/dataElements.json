@@ -238,5 +238,11 @@
     "description" : "Parallax cursor",
     "img" : "./src/media/image/ParallaxCursor.png",
     "href" : "./collection/ParallaxCursor/index.html"
+  },
+  {
+    "type" : "site",
+    "description" : "Grow",
+    "img" : "./src/media/image/ParallaxSite.png",
+    "href" : "./collection/ParallaxSite/index.html"
   }
 ]
