@@ -17,7 +17,7 @@ let visibleCards = sessionStorage.getItem("visibleCards") || 0;
                 case "css":
                     card(item, css);
                     break;
-                case "ga":
+                case "app":
                     card(item, ga);
                     break;
                 case "site":

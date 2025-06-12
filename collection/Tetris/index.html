@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tetris</title>
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="return"></div>
+    <div id="container">
+      <div id="game">
+        <canvas id="tetris" width="360" height="640"></canvas>
+        <div id="gameOver">
+          <div>Игра окончена!</div>
+          <button id="restartBtn">Рестарт</button>
+          <div id="highscoresContainer">
+            <h3>Таблица рекордов:</h3>
+            <ul id="highscoreList"></ul>
+          </div>
+        </div>
+      </div>
+      <div id="scoreboard">
+        <div>Очки: <span id="score">0</span></div>
+        <div>Уровень: <span id="level">1</span></div>
+        <div>
+          <strong>Следующая фигура:</strong>
+          <div id="nextPiece">
+            <canvas id="next" width="120" height="120"></canvas>
+          </div>
+        </div>
+        <div id="controls">
+          Управление:<br />
+          ← → ↓ — движение и ускорение<br />
+          ↑ — поворот<br />
+          P - пауза
+        </div>
+        <div id="gameOverlay">
+          <div id="pauseOverlay" style="display: none;"></div>
+          <div id="startOverlay" class="overlay">
+            <div class="overlayContent">
+              <button id="startButton">НАЧАТЬ ИГРУ</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="../../src/elements/return_button/script.js"></script>
+  </body>
+</html>

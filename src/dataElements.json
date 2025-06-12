@@ -18,13 +18,13 @@
     "href" : "./collection/BackgroundFallingLines/index.html"
   },
   {
-    "type" : "ga",
+    "type" : "app",
     "description" : "Sticky notes",
     "img" : "./src/media/image/StickyNotes.png",
     "href" : "./collection/StickyNotes/index.html"
   },
   {
-    "type" : "ga",
+    "type" : "app",
     "description" : "To do list",
     "img" : "./src/media/image/ToDoList.png",
     "href" : "./collection/ToDoList/index.html"
@@ -84,7 +84,7 @@
     "href" : "./collection/CSSChessboard/index.html"
   },
   {
-    "type" : "ga",
+    "type" : "app",
     "description" : "Keyboard",
     "img" : "./src/media/image/Keyboard.png",
     "href" : "./collection/Keyboard/index.html"
@@ -174,25 +174,25 @@
     "href" : "https://paint-sable.vercel.app/"
   },
   {
-    "type" : "ga",
+    "type" : "app",
     "description" : "Memory game",
     "img" : "./src/media/image/MemoryGame.png",
     "href" : "./collection/MemoryGame/index.html"
   },
   {
-    "type" : "ga",
+    "type" : "app",
     "description" : "Snake",
     "img" : "./src/media/image/Snake.png",
     "href" : "./collection/Snake/index.html"
   },
   {
-    "type" : "ga",
+    "type" : "app",
     "description" : "Tic Tac Toe",
     "img" : "./src/media/image/TicTacToe.png",
     "href" : "./collection/TicTacToe/index.html"
   },
   {
-    "type" : "ga",
+    "type" : "app",
     "description" : "Paint",
     "img" : "./src/media/image/Paint.png",
     "href" : "./collection/Paint/index.html"
@@ -228,7 +228,7 @@
     "href" : "./collection/Particles/index.html"
   },
   {
-    "type" : "ga",
+    "type" : "app",
     "description" : "Password generator",
     "img" : "./src/media/image/PasswordGenerator.png",
     "href" : "./collection/PasswordGenerator/index.html"
@@ -244,5 +244,11 @@
     "description" : "Grow",
     "img" : "./src/media/image/ParallaxSite.png",
     "href" : "./collection/ParallaxSite/index.html"
+  },
+  {
+    "type" : "app",
+    "description" : "Tetris",
+    "img" : "./src/media/image/Tetris.png",
+    "href" : "./collection/Tetris/index.html"
   }
 ]
