@@ -7,16 +7,38 @@ const scale = 30;
 const nextScale = 20;
 
 const startButton = document.getElementById("startButton");
+const gameOverlay = document.getElementById("gameOverlay");
 const pauseOverlay = document.getElementById("pauseOverlay");
 const restartBtn = document.getElementById("restartBtn");
 const gameOverElem = document.getElementById("gameOver");
 const scoreElem = document.getElementById("score");
 const levelElem = document.getElementById("level");
+const themeToggle = document.getElementById("themeToggle");
 
 const arenaWidth = 12;
 const arenaHeight = 20;
 
-const colors = [null, "#FF0D72", "#0DC2FF", "#0DFF72", "#F538FF", "#FF8E0D", "#FFE138", "#3877FF"];
+const colors = [
+    null,
+    "#E57373", // Розовый
+    "#64B5F6", // Голубой
+    "#81C784", // Мятный
+    "#BA68C8", // Лавандовый
+    "#FFB74D", // Персиковый
+    "#4DB6AC", // Бирюзовый
+    "#FF8A65", // Коралловый
+];
+
+const darkThemeColors = [
+    null,
+    "#FFB7B7", // Розовый
+    "#B7E3FF", // Голубой
+    "#C8FFB7", // Мятный
+    "#E2B7FF", // Лавандовый
+    "#FFDDB7", // Персиковый
+    "#B7FFF0", // Бирюзовый
+    "#FFC3B7", // Коралловый
+];
 
 const arena = createMatrix(arenaWidth, arenaHeight);
 
@@ -39,15 +61,47 @@ let fadeRows = [];
 const fadeDuration = 500;
 let fadeStartTime = 0;
 let rowCount = 0;
+let nextPieceAlpha = 0;
 
 let bag = [];
 let bagIndex = 0;
 
+document.addEventListener("DOMContentLoaded", function () {
+    function initTheme() {
+        const savedTheme =
+            localStorage.getItem("theme") ||
+            (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+
+        if (savedTheme === "dark") {
+            document.body.classList.add("dark-theme");
+            updateButton(true);
+        }
+    }
+
+    function updateButton(isDark) {
+        const text = themeToggle.querySelector(".theme-text");
+
+        if (isDark) {
+            text.textContent = "Светлая тема";
+        } else {
+            text.textContent = "Тёмная тема";
+        }
+    }
+
+    themeToggle.addEventListener("click", function () {
+        const isDark = document.body.classList.toggle("dark-theme");
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+        updateButton(isDark);
+    });
+
+    initTheme();
+});
+
 ctx.scale(scale, scale);
-nextCtx.scale(nextScale, nextScale);
 
 startButton.addEventListener("click", () => {
     document.getElementById("startOverlay").style.display = "none";
+    gameOverlay.style.display = "none";
     gameStarted = true;
     update();
 });
@@ -57,6 +111,7 @@ restartBtn.addEventListener("click", restart);
 document.addEventListener("keydown", (event) => {
     if (event.key === "p" || event.key === "з" || event.key === "З" || event.key === "P") {
         paused = !paused;
+        gameOverlay.style.display = paused ? "flex" : "none";
         pauseOverlay.style.display = paused ? "flex" : "none";
 
         if (!paused) {
@@ -150,7 +205,9 @@ function shuffleArray(array) {
 }
 
 function drawGrid() {
-    ctx.strokeStyle = "#ddd";
+    let sS = "#ddd";
+    if (document.body.classList.contains("dark-theme")) sS = "#444";
+    ctx.strokeStyle = sS;
     ctx.lineWidth = 0.04;
 
     for (let x = 0; x <= arenaWidth; x++) {
@@ -173,44 +230,129 @@ function drawMatrix(context, matrix, offset) {
         row.forEach((value, x) => {
             if (value !== 0) {
                 let alpha = 1;
+                let fS = colors[value];
+                let sS = "#fff";
+
+                if (document.body.classList.contains("dark-theme")) {
+                    fS = darkThemeColors[value];
+                    sS = "#222";
+                }
+
                 if (fadeRows.length) {
                     const fadeRow = fadeRows.find((fr) => fr.row === y + offset.y);
                     if (fadeRow) alpha = fadeRow.alpha;
                 }
                 context.globalAlpha = alpha;
-
-                context.fillStyle = colors[value];
+                context.fillStyle = fS;
                 context.fillRect(x + offset.x, y + offset.y, 1, 1);
-                context.strokeStyle = "#fff";
+                context.strokeStyle = sS;
                 context.lineWidth = 0.05;
                 context.strokeRect(x + offset.x, y + offset.y, 1, 1);
 
                 context.globalAlpha = 1;
+                if (fadeRows.some((fr) => fr.row === y + offset.y)) {
+                    context.fillStyle = `rgba(255,255,255,${alpha})`;
+                }
             }
         })
     );
 }
 
 function draw() {
-    ctx.fillStyle = "#fafafa";
+    let fS = "#fafafa";
+    if (document.body.classList.contains("dark-theme")) fS = "#22272e";
+    ctx.fillStyle = fS;
     ctx.fillRect(0, 0, canvas.width / scale, canvas.height / scale);
-    drawGrid();
+    if (player.level < 6) drawGrid();
     drawMatrix(ctx, arena, { x: 0, y: 0 });
+    if (player.level < 3) drawShadow();
     drawMatrix(ctx, player.matrix, player.pos);
     drawNext();
 }
 
+function drawShadow() {
+    if (!player.matrix || player.level >= 3) return;
+    if (!player.matrix) return;
+
+    const shadowPos = { ...player.pos };
+    while (
+        !collide(arena, {
+            matrix: player.matrix,
+            pos: { ...shadowPos, y: shadowPos.y + 1 },
+        })
+    ) {
+        shadowPos.y++;
+    }
+
+    ctx.save();
+    const gradientAlpha = 0.1 + 0.2 * (player.pos.y / shadowPos.y);
+    ctx.globalAlpha = Math.min(0.2, gradientAlpha);
+
+    player.matrix.forEach((row, y) => {
+        row.forEach((value, x) => {
+            if (value !== 0) {
+                let fS = "#000";
+                if (document.body.classList.contains("dark-theme")) fS = "#fff";
+                ctx.fillStyle = fS;
+                ctx.fillRect(x + shadowPos.x, y + shadowPos.y, 1, 1);
+            }
+        });
+    });
+
+    ctx.restore();
+}
+
 function drawNext() {
-    const w = nextCanvas.width / nextScale;
-    const h = nextCanvas.height / nextScale;
-    nextCtx.fillStyle = "#fafafa";
-    nextCtx.fillRect(0, 0, w, h);
+    // Очищаем canvas
+    let fS = "#fafafa";
+    if (document.body.classList.contains("dark-theme")) fS = "#22272e";
+    nextCtx.fillStyle = fS;
+    nextCtx.fillRect(0, 0, nextCanvas.width, nextCanvas.height);
 
     if (player.nextMatrix) {
         const m = player.nextMatrix;
-        const offsetX = Math.floor((w - m[0].length) / 2);
-        const offsetY = Math.floor((h - m.length) / 2);
-        drawMatrix(nextCtx, m, { x: offsetX, y: offsetY });
+        const cellSize = 25;
+
+        let minX = m[0].length,
+            maxX = 0;
+        let minY = m.length,
+            maxY = 0;
+
+        m.forEach((row, y) => {
+            row.forEach((value, x) => {
+                if (value !== 0) {
+                    minX = Math.min(minX, x);
+                    maxX = Math.max(maxX, x);
+                    minY = Math.min(minY, y);
+                    maxY = Math.max(maxY, y);
+                }
+            });
+        });
+
+        const figWidth = maxX - minX + 1;
+        const figHeight = maxY - minY + 1;
+
+        const centerX = (nextCanvas.width - figWidth * cellSize) / 2 - minX * cellSize;
+        const centerY = (nextCanvas.height - figHeight * cellSize) / 2 - minY * cellSize;
+
+        m.forEach((row, y) => {
+            row.forEach((value, x) => {
+                let fS = colors[value];
+                let sS = "#fff";
+                if (document.body.classList.contains("dark-theme")) {
+                    fS = darkThemeColors[value];
+                    sS = "#222";
+                }
+                if (value !== 0) {
+                    nextCtx.fillStyle = fS;
+                    nextCtx.fillRect(centerX + x * cellSize, centerY + y * cellSize, cellSize, cellSize);
+
+                    nextCtx.strokeStyle = sS;
+                    nextCtx.lineWidth = 2;
+                    nextCtx.strokeRect(centerX + x * cellSize, centerY + y * cellSize, cellSize, cellSize);
+                }
+            });
+        });
     }
 }
 
@@ -268,21 +410,23 @@ function playerDrop() {
 }
 
 function arenaSweep() {
-    let cleared = 0;
-    outer: for (let y = arena.length - 1; y >= 0; --y) {
-        for (let x = 0; x < arena[y].length; ++x) {
-            if (!arena[y][x]) continue outer;
-        }
-        if (!fadeRows.some((fr) => fr.row === y)) {
-            fadeRows.push({ row: y, alpha: 1 });
-            cleared++;
+    const rowsToRemove = [];
+
+    for (let y = arena.length - 1; y >= 0; y--) {
+        if (arena[y].every((cell) => cell !== 0)) {
+            rowsToRemove.push(y);
         }
     }
-    return cleared;
+
+    if (rowsToRemove.length > 0) {
+        fadeRows = rowsToRemove.map((row) => ({ row, alpha: 1 }));
+    }
+
+    return rowsToRemove.length;
 }
 
 function updateDropInterval() {
-    dropInterval = 1000 - (player.level - 1) * 100;
+    dropInterval = Math.max(100, 1000 - player.level * 50);
     if (dropInterval < 100) dropInterval = 100;
 }
 
@@ -297,6 +441,7 @@ function resetPlayer() {
         showGameOver();
     }
     drawNext();
+    nextPieceAlpha = 0;
 }
 
 function randomPiece() {
@@ -329,20 +474,22 @@ function update(time = 0) {
         fadeRows.forEach((fr) => (fr.alpha = Math.max(0, progress)));
 
         if (elapsed >= fadeDuration) {
-            fadeRows
-                .map((fr) => fr.row)
-                .sort((a, b) => b - a)
-                .forEach((row) => {
-                    arena.splice(row, 1);
-                    arena.unshift(new Array(arenaWidth).fill(0));
-                });
-            fadeRows = [];
+            const newArena = arena.filter((_, index) => !fadeRows.some((fr) => fr.row === index));
 
+            const rowsRemoved = fadeRows.length;
+            for (let i = 0; i < rowsRemoved; i++) {
+                newArena.unshift(new Array(arenaWidth).fill(0));
+            }
+
+            arena.length = 0;
+            arena.push(...newArena);
+
+            const linesCleared = fadeRows.length;
             let points = 0;
-            if (rowCount === 1) points = 50;
-            else if (rowCount === 2) points = 100;
-            else if (rowCount === 3) points = 300;
-            else if (rowCount === 4) points = 1000;
+            if (linesCleared === 1) points = 50;
+            else if (linesCleared === 2) points = 100;
+            else if (linesCleared === 3) points = 300;
+            else if (linesCleared === 4) points = 1000;
 
             player.score += points;
             const newLevel = Math.floor(player.score / 500) + 1;
@@ -353,7 +500,6 @@ function update(time = 0) {
 
             fadeRows = [];
             fadeStartTime = 0;
-            rowCount = 0;
         }
         draw();
         return requestAnimationFrame(update);
@@ -400,6 +546,7 @@ function updateHighscores(name, score) {
     highscores.sort((a, b) => b.score - a.score);
     const top10 = highscores.slice(0, 10);
     localStorage.setItem("tetrisHighscores", JSON.stringify(top10));
+    localStorage.setItem("totalLines", player.totalLines);
 }
 
 function renderHighscores() {
