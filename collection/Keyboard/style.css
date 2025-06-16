@@ -27,6 +27,7 @@ textarea::selection {
 }
 
 textarea {
+    cursor: default;
     font-family: "Comfortaa", sans-serif;
     white-space: normal;
     background: #a7ae7c;
