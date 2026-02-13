@@ -65,7 +65,7 @@ window.onload = function () {
         document.body.style = "display: block";
         window.scrollTo({
             top: +sessionStorage.getItem("scrollPosition"),
-            behavior: "smooth",
+            // behavior: "smooth",
         });
     }, 50);
 };
